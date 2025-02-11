@@ -12,8 +12,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import CarouselProduct from "../components/OurExperties/OurExperties";
 import CountUp from "react-countup";
-
-
 function Home() {
   return (
     <>
