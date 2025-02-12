@@ -1,34 +1,24 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+"use client";
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import '../CustomCss/CustomStyle.css';
-import { Link } from 'react-router-dom';
-import EcloudHeroImg from '../Images/ProductImages/tab.png';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import ecloudBig from '../Images/Mockups/ecloud-big.jpg';
-import target from '../Images/SVG/TargetPeople.svg';
-import keyTrend from '../Images/SVG/Key trends.svg';
-import RCst from '../Images/SVG/Stayaheadofremediationcosts-o.svg';
-import SecurePage from '../Images/SVG/Securepage.svg';
-import Grf from '../Images/SVG/KYBandUBOchecks.svg';
-import EdmsLc from '../Images/LC/CertificatesLifeCycle.gif';
-import CrossPattern from '../Images/Nau/CrossPattern.jpg';
-import SEO from '../Components/Seo/Seo';
-import { HelmetProvider } from 'react-helmet-async';
+
+
+
 function VCertificate(index) {
     let boxVariantsL = {};
     let boxVariantsR = {};
     let boxVariantsPop = {};
-    const isMobile = window.innerWidth < 1100;
+    const isMobile =typeof window !=="undefined" && window.innerWidth < 1100;
     if (!isMobile) {
         boxVariantsL = {
-            initial: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
-            whileInView: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+            initial: { opacity: 0 },
+            whileInView: { opacity: 1, transition: { duration: 0.7 } }
         }
         boxVariantsR = {
-            initial: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
-            whileInView: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+            initial: { opacity: 0 },
+            whileInView: { opacity: 1, transition: { duration: 0.7 } }
         }
         boxVariantsPop = {
             initial: { opacity: 0, scale: 0.2 },
@@ -53,19 +43,13 @@ function VCertificate(index) {
 
         <>
 
-            <HelmetProvider>
-                <SEO
-                    description="Orion Marine ensures smooth business environment with the best Electronic Document Management System. Organise documents into electronic documents for easy access & management"
-                    title="Orion Marine Concepts | Vessel Certificate Management Sytstem"
-                    keywords="Maritime ERP, Ship Management Software, Maritime Compliance, Fleet Management, Business Intelligence, Green Shipping SolutionsMaritime ERP, Cloud-Based Software, Safety Management, Crew Optimization, Fleet Performance, Certificate Management, Risk Assessment, Centralized Filing System, Third-Party Integration, NAU 2.1. Marine Software solutions, Electronic Marpol Seal Log Marine, Waste Management Systems, Vdr Analysis and Assesment Software, Maritime Software, Maritime Software Solutions, Maritime Software Companies" />
-            </HelmetProvider>
 
             <Row className='m-l-0 m-r-0 p-l-0 p-r-0'>
                 <Container fluid className="p-l-0 p-r-0 backgroundTtachment">
                     <Row className='m-l-0 m-r-0 motion-container'>
                         <Col xs={12} md={6}>
                             <motion.div variants={boxVariantsL} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
-                                <img src={EcloudHeroImg} alt="E-cloud" className='p-t-5per p-l-10per p-r-10per img-fluid' style={{ maxWidth: "90%" }} />
+                                <img src="/Images/ProductImages/tab.png" alt="E-cloud" className='p-t-5per p-l-10per p-r-10per img-fluid' style={{ maxWidth: "90%" }} />
                             </motion.div>
                         </Col>
                         <Col xs={12} md={6}>
@@ -109,7 +93,7 @@ function VCertificate(index) {
                                     </motion.div>
                                 </Col>
                                 <Col xs={12} md={6}>
-                                    <img src={EdmsLc} alt='Products' className='img-fluid' style={{ boxShadow: "#6b6b6b 1px 1px 4px", borderRadius: "4px" }} />
+                                    <img src="/Images/LC/CertificatesLifeCycle.gif" alt='Products' className='img-fluid' style={{ boxShadow: "#6b6b6b 1px 1px 4px", borderRadius: "4px" }} />
                                 </Col>
                             </Row>
                             <Row className="mt-5 text-start">
@@ -124,7 +108,7 @@ function VCertificate(index) {
                         </Container>
                         <Row className='m-l-0 m-r-0 p-l-0 p-r-0'>
                             <Col xs={12} className='p-l-0 p-r-0'>
-                                <img src={ecloudBig} alt="" className='img-fluid' />
+                                <img src="/Images/Mockups/ecloud-big.jpg" alt="" className='img-fluid' />
                             </Col>
                         </Row>
 
@@ -143,7 +127,7 @@ function VCertificate(index) {
                                 <div className="features1_component-copy text-left m-t-10">
                                     <div className="features-item-1">
                                         <div className="layout11_item">
-                                            <div className="layout11_icon-wrapper"><img src={target} loading="lazy" alt="" /></div>
+                                            <div className="layout11_icon-wrapper"><img src="/Images/SVG/TargetPeople.svg" loading="lazy" alt="" /></div>
                                             <div className="layout11_content-wrapper">
                                                 <div className="margin-bottom margin-small">
                                                     <h3 className="heading-small">Enhanced Regulatory Compliance</h3>
@@ -156,7 +140,7 @@ function VCertificate(index) {
                                     </div>
                                     <div className="features-item-2">
                                         <div className="layout11_item">
-                                            <div className="layout11_icon-wrapper"><img src={keyTrend} loading="lazy" alt="" /></div>
+                                            <div className="layout11_icon-wrapper"><img src="/Images/SVG/Key trends.svg" loading="lazy" alt="" /></div>
                                             <div className="layout11_content-wrapper">
                                                 <div className="margin-bottom margin-small">
                                                     <h3 className="heading-small">Improved Operational Efficiency</h3>
@@ -168,7 +152,7 @@ function VCertificate(index) {
                                     </div>
                                     <div className="features-item-3">
                                         <div className="layout11_item">
-                                            <div className="layout11_icon-wrapper"><img src={RCst} loading="lazy" alt="" /></div>
+                                            <div className="layout11_icon-wrapper"><img src="/Images/SVG/Stayaheadofremediationcosts-o.svg" loading="lazy" alt="" /></div>
                                             <div className="layout11_content-wrapper">
                                                 <div className="margin-bottom margin-small">
                                                     <h3 className="heading-small">Increased Peace of Mind</h3>
@@ -180,7 +164,7 @@ function VCertificate(index) {
                                     </div>
                                     <div className="features-item-4">
                                         <div className="layout11_item">
-                                            <div className="layout11_icon-wrapper"><img src={SecurePage} loading="lazy" alt="" /></div>
+                                            <div className="layout11_icon-wrapper"><img src="/Images/SVG/Securepage.svg" loading="lazy" alt="" /></div>
                                             <div className="layout11_content-wrapper">
                                                 <div className="margin-bottom margin-small">
                                                     <h3 className="heading-small">Improved Decision-Making</h3>
@@ -193,7 +177,7 @@ function VCertificate(index) {
                                     </div>
                                     <div className="features-item-5">
                                         <div className="layout11_item">
-                                            <div className="layout11_icon-wrapper"><img src={Grf} loading="lazy" alt="" /></div>
+                                            <div className="layout11_icon-wrapper"><img src="/Images/SVG/KYBandUBOchecks.svg" loading="lazy" alt="" /></div>
                                             <div className="layout11_content-wrapper">
                                                 <div className="margin-bottom margin-small">
                                                     <h3 className="heading-small">Reduced Costs</h3>
@@ -216,14 +200,14 @@ function VCertificate(index) {
                 <Container fluid style={{ padding: '0' }} className=' m-t-60 text-left'>
                     <Row style={{ margin: '0', padding: '0' }}>
 
-                        <Row className=' pt-5 pb-5 text-center' style={{ backgroundImage: "url(" + CrossPattern + ")", backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "0", margin: "0" }}>
+                        <Row className=' pt-5 pb-5 text-center' style={{ backgroundImage: "url(/Images/Nau/CrossPattern.jpg)", backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "0", margin: "0" }}>
                             <Col xs={12} md={8}>
                                 <h1 className="BiEmpowering" style={{ color: "#ffffff", paddingTop: "3%" }}>Ready to Sail? </h1>
                                 <h1 className="BiEmpoweringBottomText" style={{ color: "#ffffff", paddingTop: "3%" }}>Set sail on a journey that redefines efficiency and ushers in a new era in maritime management. Join the NAU 2.1 wave today. </h1>
                             </Col>
                             <Col xs={12} md={4}>
                                 <Button variant="light" className='m-t-90 p-l-50 p-r-50 fs-25 p-t-10 p-b-10 btn btn-light'>
-                                    <Link to='/ScheduleDemo' style={{ fontSize: "1.4rem" }}>
+                                    <Link href='/ScheduleDemo' style={{ fontSize: "1.4rem" }}>
                                         Embark Now
                                     </Link>
                                 </Button>

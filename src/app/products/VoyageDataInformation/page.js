@@ -1,10 +1,6 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+"use client";
 import { Container, Row, Accordion, Col } from 'react-bootstrap';
-import '../CustomCss/CustomStyle.css';
-import VoyageRecorderBg from '../Images/ProductImages/VOYAGE-DATA-INFORMATION-ANALYSIS-AND-ASSESSMENT.jpg';
-import VoyageFeature from '../Images/ProductImages/FEATURES-1.png';
-import VDRSystem from '../Images/ProductImages/voyage-data-system-1.png';
+
 
 function VoyageDataRecorder() {
 
@@ -15,7 +11,7 @@ function VoyageDataRecorder() {
                     <div className='col-12' style={{ padding: "0" }}>
                         <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
                             <div className='ResponsiveImage' style={{ position: "relative" }}>
-                                <img src={VoyageRecorderBg} loading='eager' alt='Products' className='img-fluid' />
+                                <img src="/Images/ProductImages/VOYAGE-DATA-INFORMATION-ANALYSIS-AND-ASSESSMENT.jpg" loading='eager' alt='Products' className='img-fluid' />
                                 <div className='PositionedText'>
                                     <h1>VOYAGE DATA INFORMATION, ANALYSIS AND ASSESSMENT</h1>
                                 </div>
@@ -27,7 +23,7 @@ function VoyageDataRecorder() {
                     <Container>
                         <Row className="g-5 text-start">
                             <div className="col-12 col-sm-5">
-                                <img src={VoyageFeature} alt='Products' className='img-fluid' />
+                                <img src="/Images/ProductImages/FEATURES-1.png" alt='Products' className='img-fluid' />
                             </div>
                             <div className="col-12 col-sm-7">
                                 <div className='row justify-content-start'>
@@ -47,7 +43,7 @@ function VoyageDataRecorder() {
                                 </p>
                             </div>
                             <div className="col-12 col-sm-7">
-                                <img src={VDRSystem} alt='Products' className='img-fluid' />
+                                <img src="/Images/ProductImages/voyage-data-system-1.png" alt='Products' className='img-fluid' />
                             </div>
                         </Row>
                         <Row>

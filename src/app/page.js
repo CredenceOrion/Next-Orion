@@ -1,13 +1,7 @@
 "use client";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/CustomCss/CustomStyle.css";
-import "../styles/CustomCss/Margins.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faComputer,faShip,faServer,} from "@fortawesome/free-solid-svg-icons";
-import {} from "@fortawesome/fontawesome-svg-core";
-import {} from "@fortawesome/fontawesome-free-solid";
-import {} from "@fortawesome/fontawesome-free";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import CarouselProduct from "../components/OurExperties/OurExperties";

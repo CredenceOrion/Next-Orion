@@ -1,10 +1,6 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+"use client";
 import { Container, Row, Accordion } from 'react-bootstrap';
-import '../CustomCss/CustomStyle.css';
-import WasteBg from '../Images/ProductImages/ELECTRONIC-WASTE-DISPOSAL-LOG-BOOK.jpg';
-import Wastelog from '../Images/ProductImages/Electroniclogbook.png';
-import SludgeBilge from '../Images/ProductImages/sludgeblidgeReport.png';
+
 
 function WasteDisposal() {
 
@@ -15,7 +11,7 @@ function WasteDisposal() {
                     <div className='col-12' style={{ padding: "0" }}>
                         <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
                             <div className='ResponsiveImage' style={{ position: "relative" }}>
-                                <img src={WasteBg} loading='eager' alt='Products' className='img-fluid' />
+                                <img src="/Images/ProductImages/ELECTRONIC-WASTE-DISPOSAL-LOG-BOOK.jpg" loading='eager' alt='Products' className='img-fluid' />
                                 <div className='PositionedText'>
                                     <h1>ELECTRONIC WASTE DISPOSAL LOG BOOK</h1>
                                     <h3>-</h3>
@@ -39,7 +35,7 @@ function WasteDisposal() {
                                 </div>
                             </div>
                             <div className="col-12 col-sm-6">
-                                <img src={Wastelog} alt='Products' className='img-fluid' />
+                                <img src="/Images/ProductImages/Electroniclogbook.png" alt='Products' className='img-fluid' />
                             </div>
                         </Row>
                         <Row className='mt-5 text-start'>
@@ -68,7 +64,7 @@ function WasteDisposal() {
                                 </p>
                             </div>
                             <div className="col-12 col-sm-8">
-                                <img src={SludgeBilge} alt='Products' className='img-fluid' />
+                                <img src="/Images/ProductImages/sludgeblidgeReport.png" alt='Products' className='img-fluid' />
                             </div>
                         </Row>
                         <Row>

@@ -25,7 +25,7 @@ function HeaderComponent() {
         collapseOnSelect
       >
         <Container fluid>
-          <Navbar.Brand onClick={() => setExpanded(false)} href="/" as={Link}>
+          <Navbar.Brand onClick={() => setExpanded(false)} href="/" as={Link} prefetch={true}>
             
               <img
                 src="/Images/OrionLogo.svg"
@@ -41,7 +41,7 @@ function HeaderComponent() {
                 id="navbarScrollingDropdown"
                 className="nav-link"
               >
-                <NavDropdown.Item onClick={() => setExpanded(false)} href="/NauServer" as={Link} className="nav-link">
+                <NavDropdown.Item onClick={() => setExpanded(false)} href="/NauServer" prefetch={true} as={Link} className="nav-link">
                   
                     <img
                       src="/Images/Nau/NauLogo.png"
@@ -71,7 +71,7 @@ function HeaderComponent() {
                   <NavDropdown.Item
                     onClick={() => setExpanded(false)}
                     className="nav-link"
-                    href="/Inspect-Nau-App" as={Link}
+                    href="/Inspect-Nau-App" as={Link} prefetch={true}
                   >
                     <img
                        src="/Images/inspect-nau-180.png"
@@ -83,7 +83,7 @@ function HeaderComponent() {
                   <NavDropdown.Item
                     onClick={() => setExpanded(false)}
                     className="nav-link"
-                    href="/products/Fleet-Performance-Mobile-App" as={Link}
+                    href="/products/Fleet-Performance-Mobile-App" as={Link} prefetch={true}
                   >
                     <img
                        src="/Images/CommonImages/FleetPerformanceApp_Icon.png"
@@ -106,7 +106,7 @@ function HeaderComponent() {
                 <NavDropdown.Item
                   onClick={() => setExpanded(false)}
                   className="nav-link"
-                  href="/products/fleet-management" as={Link}
+                  href="/products/fleet-management" as={Link} prefetch={true}
                 >
                   <img
                      src="/Images/CommonImages/FleetManagementIcon.png"
@@ -118,7 +118,7 @@ function HeaderComponent() {
                 <NavDropdown.Item
                   onClick={() => setExpanded(false)}
                   className="nav-link"
-                  href="/products/Crew-Management-System" as={Link}
+                  href="/products/Crew-Management-System" as={Link} prefetch={true}
                 >
                   <img
                      src="/Images/CommonImages/CrewIcon.png"
@@ -130,7 +130,7 @@ function HeaderComponent() {
                 <NavDropdown.Item
                   onClick={() => setExpanded(false)}
                   className="nav-link"
-                  href="/products/QHSSE" as={Link}
+                  href="/products/QHSSE" as={Link} prefetch={true}
                 >
                   <img
                      src="/Images/CommonImages/QhsseIcon.png"
@@ -142,7 +142,7 @@ function HeaderComponent() {
                 <NavDropdown.Item
                   onClick={() => setExpanded(false)}
                   className="nav-link"
-                  href="/products/Planned-Maintenance-System" as={Link}
+                  href="/products/Planned-Maintenance-System" as={Link} prefetch={true}
                 >
                   <img
                      src="/Images/CommonImages/PlannedMaintenance.png"
@@ -154,7 +154,7 @@ function HeaderComponent() {
                 <NavDropdown.Item
                   onClick={() => setExpanded(false)}
                   className="nav-link"
-                  href="/products/Vessel-Certificate-Management-System" as={Link}
+                  href="/products/Vessel-Certificate-Management-System" as={Link} prefetch={true}
                 >
                   <img
                      src="/Images/CommonImages/Vcms.png"
@@ -169,7 +169,7 @@ function HeaderComponent() {
                 <NavDropdown.Item
                   onClick={() => setExpanded(false)}
                   className="nav-link"
-                  href="/products/supply-Chain" as={Link}
+                  href="/products/supply-Chain" as={Link} prefetch={true}
                 >
                   <img
                      src="/Images/CommonImages/invn.png"
@@ -181,7 +181,7 @@ function HeaderComponent() {
                 <NavDropdown.Item
                   onClick={() => setExpanded(false)}
                   className="nav-link"
-                  href="/products/Electronic-Document-Management-System" as={Link}
+                  href="/products/Electronic-Document-Management-System" as={Link} prefetch={true}
                 >
                   <img
                      src="/Images/CommonImages/DmsIcon.png"
@@ -193,7 +193,7 @@ function HeaderComponent() {
                 <NavDropdown.Item
                   onClick={() => setExpanded(false)}
                   className="nav-link"
-                  href="/products/ECloud" as={Link}
+                  href="/products/ECloud" as={Link} prefetch={true}
                 >
                   <img
                      src="/Images/CommonImages/eCloudIcon.png"
@@ -206,7 +206,7 @@ function HeaderComponent() {
                 <NavDropdown.Item
                   onClick={() => setExpanded(false)}
                   className="nav-link"
-                  href="/Orion-Bi" as={Link}
+                  href="/products/Orion-Bi" as={Link} prefetch={true}
                 >
                   <img
                      src="/Images/CommonImages/OrionBiIcon.png"
@@ -229,7 +229,7 @@ function HeaderComponent() {
                 <NavDropdown.Item
                   onClick={() => setExpanded(false)}
                   className="nav-link"
-                  href="/OurTeam" as={Link}
+                  href="/OurTeam" as={Link} prefetch={true}
                 >
                   <img
                      src="/Images/CommonImages/OurPeople.png"
@@ -241,7 +241,7 @@ function HeaderComponent() {
                 <NavDropdown.Item
                   onClick={() => setExpanded(false)}
                   className="nav-link"
-                  href="/about" as={Link}
+                  href="/about" as={Link} prefetch={true}
                 >
                   <img
                      src="/Images/CommonImages/AboutUs.png"
@@ -253,7 +253,7 @@ function HeaderComponent() {
                 <NavDropdown.Item
                   onClick={() => setExpanded(false)}
                   className="nav-link"
-                  href="/type-approved" as={Link}
+                  href="/type-approved" as={Link} prefetch={true}
                 >
                   <img
                      src="/Images/CommonImages/TypeApproved.png"
@@ -277,7 +277,7 @@ function HeaderComponent() {
                 <NavDropdown.Item
                   onClick={() => setExpanded(false)}
                   className="nav-link"
-                  href="/privacy-policy" as={Link}
+                  href="/privacy-policy" as={Link} prefetch={true}
                 >
                   <img
                      src="/Images/CommonImages/CompanyPolicy.png"
@@ -297,7 +297,7 @@ function HeaderComponent() {
                 <NavDropdown.Item
                   onClick={() => setExpanded(false)}
                   className="nav-link"
-                  href="/news" as={Link}
+                  href="/news" as={Link} prefetch={true}
                 >
                   <img
                      src="/Images/CommonImages/BlogIcon.png"
@@ -312,7 +312,7 @@ function HeaderComponent() {
               <Nav.Link
                 onClick={() => setExpanded(false)}
                 className="nav-link ButtonStl float-right"
-                href="/ScheduleDemo" as={Link}
+                href="/ScheduleDemo" as={Link} prefetch={true}
               >
                 Schedule a Demo
               </Nav.Link>
@@ -321,7 +321,7 @@ function HeaderComponent() {
               <Nav.Link
                 onClick={() => setExpanded(false)}
                 className="nav-link float-right m-t-10"
-                href="/contact" as={Link}
+                href="/contact" as={Link} prefetch={true}
               >
                 Contact Us
               </Nav.Link>

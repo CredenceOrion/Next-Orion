@@ -1,40 +1,23 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+"use client";
 import { Container, Row, Accordion, Col, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import '../CustomCss/CustomStyle.css';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-// import Lottie from "lottie-react";
-// import LottieCrewDash from "../Images/Lottie/ship-crew-dashboard.json";
-import FPE from '../Images/Mockups/Crew-dashboard-mockup.png';
-import CrewLc from '../Images/LC/CrewManagementLifeCycle.gif';
-import OnboardOfficers from '../Images/LC/rotation-planning.jpg';
-import target from '../Images/SVG/Clients-o.svg';
-import keyTrend from '../Images/SVG/Key trends.svg';
-import RCst from '../Images/SVG/Stayaheadofremediationcosts-o.svg';
-import SecurePage from '../Images/SVG/customerprocess-o.svg';
-import oMatrix from '../Images/SVG/Connectthedots-o..svg';
-import Brainstorm from '../Images/SVG/db_Brainstorming.svg';
-import AlertsDocuments from '../Images/SVG/Defineyouridealcustomer-o..svg';
-import Grf from '../Images/SVG/Datamanagement.svg';
-import CrossPattern from '../Images/Nau/CrossPattern.jpg';
 
-import SEO from '../Components/Seo/Seo';
-import { HelmetProvider } from 'react-helmet-async';
+
 
 function ShipCrew(index) {
   let boxVariantsL = {};
   let boxVariantsR = {};
   let boxVariantsPop = {};
-  const isMobile = window.innerWidth < 1100;
+  const isMobile =typeof window !=="undefined" && window.innerWidth < 1100;
   if (!isMobile) {
     boxVariantsL = {
-      initial: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
-      whileInView: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+      initial: { opacity: 0 },
+      whileInView: { opacity: 1, transition: { duration: 0.7 } }
     }
     boxVariantsR = {
-      initial: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
-      whileInView: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+      initial: { opacity: 0 },
+      whileInView: { opacity: 1, transition: { duration: 0.7 } }
     }
     boxVariantsPop = {
       initial: { opacity: 0, scale: 0.2 },
@@ -61,19 +44,14 @@ function ShipCrew(index) {
   return (
     <>
 
-      <HelmetProvider>
-        <SEO
-          description="With best Ship Fleet Management System, Orion Marine Concepts also provides cost-effective Marine Crew Management Services for crew selection and deployment."
-          title="Orion Marine Concepts | Ship Crew Management System | Ship Fleet Management System"
-          keywords="Ship Crew Management System, Marine Crew Management Services, Marine Crew Management, Fleet Management System, Ship Fleet Management System" />
-      </HelmetProvider>
+      
 
       <Row className='m-l-0 m-r-0 p-l-0 p-r-0'>
         <Container fluid className="p-l-0 p-r-0 backgroundTtachment">
           <Row className='m-l-0 m-r-0 motion-container'>
             <Col xs={12} md={5}>
               <motion.div variants={boxVariantsL} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
-                <img src={FPE} alt="E-cloud" className='p-t-5per img-fluid' />
+                <img src="/Images/Mockups/Crew-dashboard-mockup.png" alt="E-cloud" className='p-t-5per img-fluid' />
               </motion.div>
             </Col>
             <Col xs={12} md={7}>
@@ -193,8 +171,8 @@ function ShipCrew(index) {
                 </Col>
                 <Col xs={12} md={6}>
                   <div className=' sticky-top'>
-                    <img src={CrewLc} alt='Products' className='img-fluid' />
-                    <img src={OnboardOfficers} alt='Products' className='mt-3 mb-5 img-fluid' />
+                    <img src="/Images/LC/CrewManagementLifeCycle.gif" alt='Products' className='img-fluid' />
+                    <img src="/Images/LC/rotation-planning.jpg" alt='Products' className='mt-3 mb-5 img-fluid' />
                   </div>
                 </Col>
 
@@ -260,7 +238,7 @@ function ShipCrew(index) {
 
                         <div className="features-item-1">
                           <div className="layout11_item">
-                            <div className="layout11_icon-wrapper"><img src={target} loading="lazy" alt="" /></div>
+                            <div className="layout11_icon-wrapper"><img src="/Images/SVG/Clients-o.svg" loading="lazy" alt="" /></div>
                             <div className="layout11_content-wrapper">
                               <div className="margin-bottom margin-small">
                                 <h3 className="heading-small">Optimized Crew Selection and Deployment</h3>
@@ -272,7 +250,7 @@ function ShipCrew(index) {
 
                         <div className="features-item-2">
                           <div className="layout11_item">
-                            <div className="layout11_icon-wrapper"><img src={RCst} loading="lazy" alt="" /></div>
+                            <div className="layout11_icon-wrapper"><img src="/Images/SVG/Stayaheadofremediationcosts-o.svg" loading="lazy" alt="" /></div>
                             <div className="layout11_content-wrapper">
                               <div className="margin-bottom margin-small">
                                 <h3 className="heading-small">Reduced Administrative Time and Cost</h3>
@@ -285,7 +263,7 @@ function ShipCrew(index) {
 
                         <div className="features-item-3">
                           <div className="layout11_item">
-                            <div className="layout11_icon-wrapper"><img src={keyTrend} loading="lazy" alt="" /></div>
+                            <div className="layout11_icon-wrapper"><img src="/Images/SVG/Key trends.svg" loading="lazy" alt="" /></div>
                             <div className="layout11_content-wrapper">
                               <div className="margin-bottom margin-small">
                                 <h3 className="heading-small">Proactive Crew Retention</h3>
@@ -297,7 +275,7 @@ function ShipCrew(index) {
 
                         <div className="features-item-4">
                           <div className="layout11_item">
-                            <div className="layout11_icon-wrapper"><img src={SecurePage} loading="lazy" alt="" /></div>
+                            <div className="layout11_icon-wrapper"><img src="/Images/SVG/customerprocess-o.svg" loading="lazy" alt="" /></div>
                             <div className="layout11_content-wrapper">
                               <div className="margin-bottom margin-small">
                                 <h3 className="heading-small">Improved Decision-Making</h3>
@@ -309,7 +287,7 @@ function ShipCrew(index) {
 
                         <div className="features-item-5">
                           <div className="layout11_item">
-                            <div className="layout11_icon-wrapper"><img src={Grf} loading="lazy" alt="" /></div>
+                            <div className="layout11_icon-wrapper"><img src="/Images/SVG/Datamanagement.svg" loading="lazy" alt="" /></div>
                             <div className="layout11_content-wrapper">
                               <div className="margin-bottom margin-small">
                                 <h3 className="heading-small">Enhanced Compliance</h3>
@@ -321,7 +299,7 @@ function ShipCrew(index) {
 
                         <div className="features-item-5">
                           <div className="layout11_item">
-                            <div className="layout11_icon-wrapper"><img src={oMatrix} loading="lazy" alt="" /></div>
+                            <div className="layout11_icon-wrapper"><img src="/Images/SVG/Connectthedots-o..svg" loading="lazy" alt="" /></div>
                             <div className="layout11_content-wrapper">
                               <div className="margin-bottom margin-small">
                                 <h3 className="heading-small">Officers Matrix</h3>
@@ -333,7 +311,7 @@ function ShipCrew(index) {
 
                         <div className="features-item-5">
                           <div className="layout11_item">
-                            <div className="layout11_icon-wrapper"><img src={Brainstorm} loading="lazy" alt="" /></div>
+                            <div className="layout11_icon-wrapper"><img src="/Images/SVG/db_Brainstorming.svg" loading="lazy" alt="" /></div>
                             <div className="layout11_content-wrapper">
                               <div className="margin-bottom margin-small">
                                 <h3 className="heading-small">Alerts & Reminders</h3>
@@ -345,7 +323,7 @@ function ShipCrew(index) {
 
                         <div className="features-item-5">
                           <div className="layout11_item">
-                            <div className="layout11_icon-wrapper"><img src={AlertsDocuments} loading="lazy" alt="" /></div>
+                            <div className="layout11_icon-wrapper"><img src="/Images/SVG/Defineyouridealcustomer-o..svg" loading="lazy" alt="" /></div>
                             <div className="layout11_content-wrapper">
                               <div className="margin-bottom margin-small">
                                 <h3 className="heading-small">Reports & Documents</h3>
@@ -367,14 +345,14 @@ function ShipCrew(index) {
         <Container fluid style={{ padding: '0' }} className=' m-t-60 text-left'>
           <Row style={{ margin: '0', padding: '0' }}>
 
-            <Row className=' pt-5 pb-5 text-center' style={{ backgroundImage: "url(" + CrossPattern + ")", backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "0", margin: "0" }}>
+            <Row className=' pt-5 pb-5 text-center' style={{ backgroundImage: "url(/Images/Nau/CrossPattern.jpg)", backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "0", margin: "0" }}>
               <Col xs={12} md={8}>
                 <h1 className="BiEmpowering" style={{ color: "#ffffff", paddingTop: "3%" }}>Ready to Sail? </h1>
                 <h1 className="BiEmpoweringBottomText" style={{ color: "#ffffff", paddingTop: "3%" }}>Set sail on a journey that redefines efficiency and ushers in a new era in maritime management. Join the NAU 2.1 wave today. </h1>
               </Col>
               <Col xs={12} md={4}>
                 <Button variant="light" className='m-t-90 p-l-50 p-r-50 fs-25 p-t-10 p-b-10 btn btn-light'>
-                  <Link to='/ScheduleDemo' style={{ fontSize: "1.4rem" }}>
+                  <Link href='/ScheduleDemo' style={{ fontSize: "1.4rem" }}>
                     Embark Now
                   </Link>
                 </Button>

@@ -1,10 +1,6 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+"use client";
 import { Container, Row, Accordion } from 'react-bootstrap';
-import '../CustomCss/CustomStyle.css';
-import MarpoleBg from '../Images/ProductImages/ELECTRONIC-MARPOL-SEAL-LOG-BOOK.jpg';
-import Marpole1 from '../Images/ProductImages/marpole-seal-log-n.png';
-import Marpole2 from '../Images/ProductImages/seal-open-270x270.png';
+
 
 function Marpole() {
 
@@ -15,7 +11,7 @@ function Marpole() {
                     <div className='col-12' style={{ padding: "0" }}>
                         <div className='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
                             <div className='ResponsiveImage' style={{ position: "relative" }}>
-                                <img src={MarpoleBg} loading='eager' alt='Products' className='img-fluid' />
+                                <img src="/Images/ProductImages/ELECTRONIC-MARPOL-SEAL-LOG-BOOK.jpg" loading='eager' alt='Products' className='img-fluid' />
                                 <div className='PositionedText'>
                                     <h1>ELECTRONIC MARPOL SEAL LOG BOOK</h1>
                                     <h3>-</h3>
@@ -29,7 +25,7 @@ function Marpole() {
                     <Container>
                         <Row className="g-5 text-start">
                             <div className="col-12 col-sm-6">
-                                <img src={Marpole1} alt='Products' className='img-fluid' />
+                                <img src="/Images/ProductImages/marpole-seal-log-n.png" alt='Products' className='img-fluid' />
                             </div>
                             <div className="col-12 col-sm-6">
                                 <div className='row justify-content-start'>
@@ -48,7 +44,7 @@ function Marpole() {
                                 </p>
                             </div>
                             <div className="col-12 col-sm-3">
-                                <img src={Marpole2} alt='Products' className='img-fluid' />
+                                <img src="/Images/ProductImages/seal-open-270x270.png" alt='Products' className='img-fluid' />
                             </div>
                         </Row>
                         <Row>

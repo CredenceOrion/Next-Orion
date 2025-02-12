@@ -1,22 +1,8 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
+"use client";
 import { Container, Row, Accordion, Col, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import "../CustomCss/CustomStyle.css";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
-import PmsLc from "../Images/LC/PmsLifeCycle.gif";
-import pms from "../Images/Mockups/pms.jpg";
-import pmsside1 from "../Images/ERP_Orion.png";
-// import target from '../Images/ProductImages/pms_software_for_ship.jpg';
-import CrossPattern from "../Images/Nau/CrossPattern.jpg";
-import target from "../Images/SVG/TargetPeople.svg";
-import keyTrend from "../Images/SVG/Key trends.svg";
-import RCst from "../Images/SVG/Stayaheadofremediationcosts-o.svg";
-import SecurePage from "../Images/SVG/Securepage.svg";
-import Grf from "../Images/SVG/KYBandUBOchecks.svg";
-import SEO from "../Components/Seo/Seo";
-import { HelmetProvider } from "react-helmet-async";
 function PMSInventory(index) {
   let boxVariantsL = {};
   //let boxVariantsR = {};
@@ -24,13 +10,10 @@ function PMSInventory(index) {
   const isMobile = window.innerWidth < 1100; //Add the width you want to check for here (now 768px)
   if (!isMobile) {
     boxVariantsL = {
-      initial: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
-      whileInView: { opacity: 1, x: 0, transition: { duration: 0.7 } },
+      initial: { opacity: 0 },
+      whileInView: { opacity: 1, transition: { duration: 0.7 } },
     };
-    // boxVariantsR = {
-    //   initial: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
-    //   whileInView: { opacity: 1, x: 0, transition: { duration: 0.7 } },
-    // };
+   
     boxVariantsPop = {
       initial: { opacity: 0, scale: 0.2 },
       whileInView: { opacity: 1, scale: 1, transition: { duration: 1 } },
@@ -51,13 +34,7 @@ function PMSInventory(index) {
   }
   return (
     <>
-      <HelmetProvider>
-        <SEO
-          description="Orion Marine Concepts is a top class approved system for managing planned, unplanned, condition and counter based maintenance with a user-friendly interface making it swift and practical for the operators."
-          title="Orion Marine Concepts | Planned Maintenance System"
-          keywords="Maritime ERP, Ship Management Software, Maritime Compliance, Fleet Management, Business Intelligence, Green Shipping SolutionsMaritime ERP, Cloud-Based Software, Safety Management, Crew Optimization, Fleet Performance, Certificate Management, Risk Assessment, Centralized Filing System, Third-Party Integration, NAU 2.1. Marine Software solutions, Electronic Marpol Seal Log Marine, Waste Management Systems, Vdr Analysis and Assesment Software, Maritime Software, Maritime Software Solutions, Maritime Software Companies"
-        />
-      </HelmetProvider>
+     
 
       <Row className="m-l-0 m-r-0 p-l-0 p-r-0">
         <Container>
@@ -93,7 +70,7 @@ function PMSInventory(index) {
               </motion.div>
             </Col>
             <Col xs={12} md={6}>
-              <img src={pmsside1} alt="Products" className="img-fluid mb-3" />
+              <img src="/Images/ERP_Orion.png" alt="Products" className="img-fluid mb-3" />
              
             </Col>
           </Row>
@@ -106,7 +83,7 @@ function PMSInventory(index) {
               <h1 className="un-leash-command-heading">Orion Uptime Maestro</h1>
             </Col>
             <Col xs={12} className="p-l-0 p-r-0">
-              <img src={pms} alt="" className="img-fluid" />
+              <img src="/Images/Mockups/pms.jpg" alt="" className="img-fluid" />
             </Col>
           </Row>
         </Container>
@@ -211,7 +188,7 @@ function PMSInventory(index) {
             </Col>
             <Col xs={12} md={6}>
               <img
-                src={PmsLc}
+                src="/Images/LC/PmsLifeCycle.gif"
                 alt="Products"
                 className="img-fluid mt-2"
                 style={{
@@ -253,7 +230,7 @@ function PMSInventory(index) {
                   <div className="features-item-1">
                     <div className="layout11_item">
                       <div className="layout11_icon-wrapper">
-                        <img src={RCst} loading="lazy" alt="" />
+                        <img src="/Images/SVG/Stayaheadofremediationcosts-o.svg" loading="lazy" alt="" />
                       </div>
                       <div className="layout11_content-wrapper">
                         <div className="margin-bottom margin-small">
@@ -272,7 +249,7 @@ function PMSInventory(index) {
                   <div className="features-item-2">
                     <div className="layout11_item">
                       <div className="layout11_icon-wrapper">
-                        <img src={Grf} loading="lazy" alt="" />
+                        <img src="/Images/SVG/KYBandUBOchecks.svg" loading="lazy" alt="" />
                       </div>
                       <div className="layout11_content-wrapper">
                         <div className="margin-bottom margin-small">
@@ -290,7 +267,7 @@ function PMSInventory(index) {
                   <div className="features-item-3">
                     <div className="layout11_item">
                       <div className="layout11_icon-wrapper">
-                        <img src={SecurePage} loading="lazy" alt="" />
+                        <img src="/Images/SVG/Securepage.svg" loading="lazy" alt="" />
                       </div>
                       <div className="layout11_content-wrapper">
                         <div className="margin-bottom margin-small">
@@ -310,7 +287,7 @@ function PMSInventory(index) {
                   <div className="features-item-4">
                     <div className="layout11_item">
                       <div className="layout11_icon-wrapper">
-                        <img src={target} loading="lazy" alt="" />
+                        <img src="/Images/SVG/TargetPeople.svg" loading="lazy" alt="" />
                       </div>
                       <div className="layout11_content-wrapper">
                         <div className="margin-bottom margin-small">
@@ -330,7 +307,7 @@ function PMSInventory(index) {
                   <div className="features-item-5">
                     <div className="layout11_item">
                       <div className="layout11_icon-wrapper">
-                        <img src={keyTrend} loading="lazy" alt="" />
+                        <img src="/Images/SVG/Key trends.svg" loading="lazy" alt="" />
                       </div>
                       <div className="layout11_content-wrapper">
                         <div className="margin-bottom margin-small">
@@ -356,7 +333,7 @@ function PMSInventory(index) {
             <Row
               className=" pt-5 pb-5 text-center"
               style={{
-                backgroundImage: "url(" + CrossPattern + ")",
+                backgroundImage: "url(/Images/Nau/CrossPattern.jpg)",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundPosition: "0",
@@ -383,7 +360,7 @@ function PMSInventory(index) {
                   variant="light"
                   className="m-t-90 p-l-50 p-r-50 fs-25 p-t-10 p-b-10 btn btn-light"
                 >
-                  <Link to="/ScheduleDemo" style={{ fontSize: "1.4rem" }}>
+                  <Link href="/ScheduleDemo" style={{ fontSize: "1.4rem" }}>
                     Embark Now
                   </Link>
                 </Button>

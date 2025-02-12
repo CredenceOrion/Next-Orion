@@ -10,12 +10,12 @@ function FPMApp(index) {
   const isMobile = typeof window !== "undefined" && window.innerWidth < 1100;
   if (!isMobile) {
     boxVariantsL = {
-      initial: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
-      whileInView: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+      initial: { opacity: 0 },
+      whileInView: { opacity: 1, transition: { duration: 0.7 } }
     }
     boxVariantsR = {
-      initial: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
-      whileInView: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+      initial: { opacity: 0 },
+      whileInView: { opacity: 1, transition: { duration: 0.7 } }
     }
     // boxVariantsPop = {
     //   initial: { opacity: 0, scale: 0.2 },

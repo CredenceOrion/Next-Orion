@@ -1,22 +1,9 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'font-awesome/css/font-awesome.css';
+"use client";
 import { Container, Row, Accordion, Col, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import '../CustomCss/CustomStyle.css';
-import { motion } from 'framer-motion';
-import QHFPE from '../Images/Mockups/qhsse-dashboard-mockupTop.png';
-import QHFPE2 from '../Images/Mockups/qhsse-dashboard-mockup2.png';
+import Link from 'next/link';
 
-import QHCover from '../Images/ProductImages/qhsse_cover.png';
-import HSSEQDA from '../Images//Mockups/Hsseq.jpg';
-import target from '../Images/SVG/flagsimmediately-o.svg';
-import RCst from '../Images/SVG/decisions,faster-o..svg';
-import SecurePage from '../Images/SVG/Flowdata.svg';
-import Grf1 from '../Images/SVG/Supportingyoursuccess-o..svg';
-import CrossPattern from '../Images/Nau/CrossPattern.jpg';
-import SEO from '../Components/Seo/Seo';
-import { HelmetProvider } from 'react-helmet-async';
+import { motion } from 'framer-motion';
+
 function QHSSE(index) {
     let boxVariantsL = {};
     let boxVariantsR = {};
@@ -24,12 +11,12 @@ function QHSSE(index) {
     const isMobile = window.innerWidth < 1100; //Add the width you want to check for here (now 768px)
     if (!isMobile) {
         boxVariantsL = {
-            initial: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
-            whileInView: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+            initial: { opacity: 0},
+            whileInView: { opacity: 1, transition: { duration: 0.7 } }
         }
         boxVariantsR = {
-            initial: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
-            whileInView: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+            initial: { opacity: 0 },
+            whileInView: { opacity: 1, transition: { duration: 0.7 } }
         }
         boxVariantsPop = {
             initial: { opacity: 0, scale: 0.2 },
@@ -53,19 +40,13 @@ function QHSSE(index) {
     return (
         <>
 
-<HelmetProvider>
-        <SEO
-          description="Orion Marine offers Marine Risk Management Software for Risk Assessment for Ships and to maintain all data pertaining to the Quality, Health, Safety, Security and Environment"
-          title="Orion Marine Concepts | Marine Risk Management Software | Risk Assessment for Ships"
-          keywords="Maritime ERP, Ship Management Software, Maritime Compliance, Fleet Management, Business Intelligence, Green Shipping SolutionsMaritime ERP, Cloud-Based Software, Safety Management, Crew Optimization, Fleet Performance, Certificate Management, Risk Assessment, Centralized Filing System, Third-Party Integration, NAU 2.1. Marine Software solutions, Electronic Marpol Seal Log Marine, Waste Management Systems, Vdr Analysis and Assesment Software, Maritime Software, Maritime Software Solutions, Maritime Software Companies" />
-      </HelmetProvider>
 
             <Row className='m-l-0 m-r-0 p-l-0 p-r-0'>
                 <Container fluid className="p-l-0 p-r-0 backgroundTtachment">
                     <Row className='m-l-0 m-r-0 motion-container'>
                         <Col xs={12} md={5}>
                             <motion.div variants={boxVariantsL} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
-                                <img src={QHCover} alt="E-cloud" className='p-t-5per img-fluid' />
+                                <img src="/Images/ProductImages/qhsse_cover.png" alt="E-cloud" className='p-t-5per img-fluid' />
                             </motion.div>
                         </Col>
                         <Col xs={12} md={7}>
@@ -103,7 +84,7 @@ function QHSSE(index) {
                                 </Col>
                                 <Col xs={12} md={6}>
 
-                                    <img src={QHFPE2} alt="E-cloud" className='p-t-5per img-fluid sticky-top' />
+                                    <img src="/Images/Mockups/qhsse-dashboard-mockup2.png" alt="E-cloud" className='p-t-5per img-fluid sticky-top' />
                                 </Col>
                                 <Col xs={12} md={6} className='motion-container'>
                                     <h3 className='text-left font-bold mt-5 mb-1' style={{ color: "rgb(6 23 68)" }}>Key Features</h3>
@@ -191,7 +172,7 @@ function QHSSE(index) {
                         <h1 className='un-leash-Heading'>Orion QHSSE Guardian</h1>
                     </Col>
                     <Col xs={12} style={{ padding: "0" }} className='m-t-15'>
-                        <img src={HSSEQDA} alt='Products' className='img-fluid sticky-top' />
+                        <img src="/Images//Mockups/Hsseq.jpg" alt='Products' className='img-fluid sticky-top' />
                     </Col>
                 </Row>
                 <Row className='m-l-0 m-r-0 p-r-0 p-l-0'>
@@ -207,7 +188,7 @@ function QHSSE(index) {
                                 <motion.div variants={boxVariantsL} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
                                     <div className="features-item-1">
                                         <div className="layout11_item" style={{ padding: "1rem", marginBottom: "1rem" }}>
-                                            <div className="layout11_icon-wrapper"><img src={target} loading="lazy" alt="" /></div>
+                                            <div className="layout11_icon-wrapper"><img src="/Images/SVG/flagsimmediately-o.svg" loading="lazy" alt="" /></div>
                                             <div className="layout11_content-wrapper">
                                                 <div className="margin-bottom margin-small">
                                                     <h3 className="heading-small">Reduce accidents and injuries</h3>
@@ -218,7 +199,7 @@ function QHSSE(index) {
                                     </div>
                                     <div className="features-item-2">
                                         <div className="layout11_item" style={{ padding: "1rem", marginBottom: "1rem" }}>
-                                            <div className="layout11_icon-wrapper"><img src={RCst} loading="lazy" alt="" /></div>
+                                            <div className="layout11_icon-wrapper"><img src="/Images/SVG/decisions,faster-o..svg" loading="lazy" alt="" /></div>
                                             <div className="layout11_content-wrapper">
                                                 <div className="margin-bottom margin-small">
                                                     <h3 className="heading-small">Enhance regulatory compliance</h3>
@@ -229,7 +210,7 @@ function QHSSE(index) {
                                     </div>
                                     <div className="features-item-4">
                                         <div className="layout11_item" style={{ padding: "1rem", marginBottom: "1rem" }}>
-                                            <div className="layout11_icon-wrapper"><img src={SecurePage} loading="lazy" alt="" /></div>
+                                            <div className="layout11_icon-wrapper"><img src="/Images/SVG/Flowdata.svg" loading="lazy" alt="" /></div>
                                             <div className="layout11_content-wrapper">
                                                 <div className="margin-bottom margin-small">
                                                     <h3 className="heading-small">Protect the environment</h3>
@@ -240,7 +221,7 @@ function QHSSE(index) {
                                     </div>
                                     <div className="features-item-5">
                                         <div className="layout11_item" style={{ padding: "1rem", marginBottom: "1rem" }}>
-                                            <div className="layout11_icon-wrapper"><img src={Grf1} loading="lazy" alt="" /></div>
+                                            <div className="layout11_icon-wrapper"><img src="/Images/SVG/Supportingyoursuccess-o..svg" loading="lazy" alt="" /></div>
                                             <div className="layout11_content-wrapper">
                                                 <div className="margin-bottom margin-small">
                                                     <h3 className="heading-small">Improve operational efficiency</h3>
@@ -253,7 +234,7 @@ function QHSSE(index) {
                             </div>
                         </Col>
                         <Col xs={12} md={6}>
-                            <img src={QHFPE} alt='Products' className='img-fluid sticky-top' />
+                            <img src="/Images/Mockups/qhsse-dashboard-mockupTop.png" alt='Products' className='img-fluid sticky-top' />
                         </Col>
                     </Row>
                 </Container>
@@ -261,14 +242,14 @@ function QHSSE(index) {
                 <Container fluid style={{ padding: '0' }} className=' m-t-60 text-left'>
                     <Row style={{ margin: '0', padding: '0' }}>
 
-                        <Row className=' pt-5 pb-5 text-center' style={{ backgroundImage: "url(" + CrossPattern + ")", backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "0", margin: "0" }}>
+                        <Row className=' pt-5 pb-5 text-center' style={{ backgroundImage: "url(/Images/Nau/CrossPattern.jpg)", backgroundRepeat: "no-repeat", backgroundSize: "cover", backgroundPosition: "0", margin: "0" }}>
                             <Col xs={12} md={8}>
                                 <h1 className="BiEmpowering" style={{ color: "#ffffff", paddingTop: "3%" }}>Ready to Sail? </h1>
                                 <h1 className="BiEmpoweringBottomText" style={{ color: "#ffffff", paddingTop: "3%" }}>Set sail on a journey that redefines efficiency and ushers in a new era in maritime management. Join the NAU 2.1 wave today. </h1>
                             </Col>
                             <Col xs={12} md={4}>
                                 <Button variant="light" className='m-t-90 p-l-50 p-r-50 fs-25 p-t-10 p-b-10 btn btn-light'>
-                                    <Link to='/ScheduleDemo' style={{ fontSize: "1.4rem" }}>
+                                    <Link href='/ScheduleDemo' style={{ fontSize: "1.4rem" }}>
                                         Embark Now
                                     </Link>
                                 </Button>
