@@ -52,7 +52,7 @@ export default function OrionMarineApps(index) {
                         viewport={{ once: true }}
                       >
                         <h1
-                          class="p-l-10per BiEmpowering"
+                          className="p-l-10per BiEmpowering"
                           style={{color: "#ffffff", paddingTop: "7%", fontSize: "2rem"}}
                         >
                           NAU Suite of Maritime Solutions
@@ -100,11 +100,11 @@ export default function OrionMarineApps(index) {
                       </motion.div>
                     </Col>
                     <Col md={6} xs={12} className="p-r-100 p-l-100">
-                      <div class="mockup">
+                      <div className="mockup">
                         <img
                           alt="Mockup Inspect Nau"
                           src="/Images/Mockups/mockup1-front.png"
-                          class="img-fluid front wow fadeInDown animated"
+                          className="img-fluid front wow fadeInDown animated"
                           data-wow-duration=".7s"
                           data-wow-delay="0.8s"
                           style={{
@@ -117,7 +117,7 @@ export default function OrionMarineApps(index) {
                         <img
                           alt="Mockup NAU"
                           src="/Images/Mockups/mockup1-back.png"
-                          class="img-fluid back wow fadeInDown animated"
+                          className="img-fluid back wow fadeInDown animated"
                           data-wow-duration=".7s"
                           data-wow-delay="0.5s"
                           style={{
@@ -137,10 +137,10 @@ export default function OrionMarineApps(index) {
                 <div className="container-fluid">
                   <Row className="row justify-content-md-center">
                     <Col xs={12} className="text-center">
-                      <h1 class="un-leash-command-heading">
+                      <h1 className="un-leash-command-heading">
                         A New Era in Maritime Efficiency
                       </h1>
-                      <h2 class="un-leash-command-subheading">
+                      <h2 className="un-leash-command-subheading">
                         Discover how our apps redefine maritime management,
                         ensuring compliance, accuracy, and operational
                         excellence

@@ -1,12 +1,9 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+
 import Link from "next/link";
 import { Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXTwitter, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import {} from "@fortawesome/free-solid-svg-icons";
-import {} from "@fortawesome/fontawesome-svg-core";
-import {} from "@fortawesome/fontawesome-free-solid";
-import {} from "@fortawesome/fontawesome-free";
+
 
 function FooterComponent() {
   return (
@@ -104,29 +101,29 @@ function FooterComponent() {
                 <Row>
                   <Col xs={12}>
                     <img
-                      src="Images/ccl-logo.png"
+                      src="/Images/ccl-logo.png"
                       className="img-fluid footerCertificate"
                       alt="ccl"
                     />
                     <img
-                      src="Images/jas-iso-logo.png"
+                      src="/Images/jas-iso-logo.png"
                       className="img-fluid footerCertificate"
                       alt="Jas Certification"
                     />
                     <img
-                      src="Images/IAF-logo.png"
+                      src="/Images/IAF-logo.png"
                       className="img-fluid footerCertificate IAFCeritifation"
                       style={{ width: "85px" }}
                       alt="IAF Ceritifation"
                     />
                     <img
-                      src="Images/ccl-iso-27001.png"
+                      src="/Images/ccl-iso-27001.png"
                       className="img-fluid footerCertificate IAFCeritifation"
                       style={{ width: "120px" }}
                       alt="ccl iso certified"
                     />
                     <img
-                      src="Images/DNV-Logo.png"
+                      src="/Images/DNV-Logo.png"
                       className="img-fluid footerCertificate IAFCeritifation"
                       style={{ width: "100px" }}
                       alt="ccl iso certified"

@@ -1,9 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Navbar, Nav, NavDropdown } from "react-bootstrap";
-import "../styles/CustomCss/Margins.css";
-import "../styles/CustomCss/CustomStyle.css";
 import Link from 'next/link';
 //scroll change effect
 function HeaderComponent() {
@@ -86,7 +83,7 @@ function HeaderComponent() {
                   <NavDropdown.Item
                     onClick={() => setExpanded(false)}
                     className="nav-link"
-                    href="products/Fleet-Performance-Mobile-App" as={Link}
+                    href="/products/Fleet-Performance-Mobile-App" as={Link}
                   >
                     <img
                        src="/Images/CommonImages/FleetPerformanceApp_Icon.png"
@@ -109,7 +106,7 @@ function HeaderComponent() {
                 <NavDropdown.Item
                   onClick={() => setExpanded(false)}
                   className="nav-link"
-                  href="products/fleet-management" as={Link}
+                  href="/products/fleet-management" as={Link}
                 >
                   <img
                      src="/Images/CommonImages/FleetManagementIcon.png"
@@ -121,7 +118,7 @@ function HeaderComponent() {
                 <NavDropdown.Item
                   onClick={() => setExpanded(false)}
                   className="nav-link"
-                  href="products/Crew-Management-System" as={Link}
+                  href="/products/Crew-Management-System" as={Link}
                 >
                   <img
                      src="/Images/CommonImages/CrewIcon.png"
@@ -133,7 +130,7 @@ function HeaderComponent() {
                 <NavDropdown.Item
                   onClick={() => setExpanded(false)}
                   className="nav-link"
-                  href="products/QHSSE" as={Link}
+                  href="/products/QHSSE" as={Link}
                 >
                   <img
                      src="/Images/CommonImages/QhsseIcon.png"
@@ -145,7 +142,7 @@ function HeaderComponent() {
                 <NavDropdown.Item
                   onClick={() => setExpanded(false)}
                   className="nav-link"
-                  href="products/Planned-Maintenance-System" as={Link}
+                  href="/products/Planned-Maintenance-System" as={Link}
                 >
                   <img
                      src="/Images/CommonImages/PlannedMaintenance.png"
@@ -157,7 +154,7 @@ function HeaderComponent() {
                 <NavDropdown.Item
                   onClick={() => setExpanded(false)}
                   className="nav-link"
-                  href="products/Vessel-Certificate-Management-System" as={Link}
+                  href="/products/Vessel-Certificate-Management-System" as={Link}
                 >
                   <img
                      src="/Images/CommonImages/Vcms.png"
@@ -172,7 +169,7 @@ function HeaderComponent() {
                 <NavDropdown.Item
                   onClick={() => setExpanded(false)}
                   className="nav-link"
-                  href="products/supply-Chain" as={Link}
+                  href="/products/supply-Chain" as={Link}
                 >
                   <img
                      src="/Images/CommonImages/invn.png"
@@ -184,7 +181,7 @@ function HeaderComponent() {
                 <NavDropdown.Item
                   onClick={() => setExpanded(false)}
                   className="nav-link"
-                  href="products/Electronic-Document-Management-System" as={Link}
+                  href="/products/Electronic-Document-Management-System" as={Link}
                 >
                   <img
                      src="/Images/CommonImages/DmsIcon.png"
@@ -209,7 +206,7 @@ function HeaderComponent() {
                 <NavDropdown.Item
                   onClick={() => setExpanded(false)}
                   className="nav-link"
-                  href="Orion-Bi" as={Link}
+                  href="/Orion-Bi" as={Link}
                 >
                   <img
                      src="/Images/CommonImages/OrionBiIcon.png"

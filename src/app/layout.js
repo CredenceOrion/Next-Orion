@@ -1,5 +1,6 @@
 import HeaderComponent from "../components/Header";
 import FooterComponent from "../components/Footer"; 
+import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/CustomCss/CustomStyle.css";
 import "../styles/CustomCss/Margins.css";
 import ScrollButton from "../components/ScrollTopButton/ScrollTopButton";  // Correct import
