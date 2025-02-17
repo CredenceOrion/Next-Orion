@@ -2,40 +2,37 @@
 import React from 'react';
 import { Container, Row, Accordion, Col} from 'react-bootstrap';
 import { motion } from 'framer-motion';
-
+import { useState, useEffect } from 'react';
 function FPMApp(index) {
-  let boxVariantsL = {};
-  let boxVariantsR = {};
-  //let boxVariantsPop = {};
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 1100;
-  if (!isMobile) {
-    boxVariantsL = {
-      initial: { opacity: 0 },
-      whileInView: { opacity: 1, transition: { duration: 0.7 } }
-    }
-    boxVariantsR = {
-      initial: { opacity: 0 },
-      whileInView: { opacity: 1, transition: { duration: 0.7 } }
-    }
-    // boxVariantsPop = {
-    //   initial: { opacity: 0, scale: 0.2 },
-    //   whileInView: { opacity: 1, scale: 1, transition: { duration: 1 } }
-    // }
-  }
-  else {
-    boxVariantsL = {
-      initial: { opacity: 1 },
-      whileInView: { opacity: 1 }
-    }
-    boxVariantsR = {
-      initial: { opacity: 1 },
-      whileInView: { opacity: 1 }
-    }
-    // boxVariantsPop = {
-    //   initial: { opacity: 1 },
-    //   whileInView: { opacity: 1 }
-    // }
-  }
+ const [isMobile, setIsMobile] = useState(false);
+   
+       useEffect(() => {
+           const checkMobile = () => window.innerWidth < 1100;
+           setIsMobile(checkMobile);
+       }, []);
+   
+     const boxVariantsL = !isMobile
+           ? {
+                 hidden: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
+                 visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+             }
+           : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+   
+       const boxVariantsR = !isMobile
+           ? {
+                 hidden: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
+                 visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+             }
+           : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+   
+       const boxVariantsPop = !isMobile
+           ? {
+                 hidden: { opacity: 0, scale: 0.2 },
+                 visible: { opacity: 1, scale: 1, transition: { duration: 1 } }
+             }
+           : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+ 
+ 
   return (
     <>
 
@@ -44,7 +41,7 @@ function FPMApp(index) {
         <Container fluid className="p-l-0 p-r-0 backgroundTtachment">
           <Row className='m-l-0 m-r-0 motion-container'>
             <Col xs={12} md={7}>
-              <motion.div variants={boxVariantsL} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+              <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
               <h1 className='p-l-10per BiEmpowering' style={{ color: "rgb(6 23 68)", paddingTop: "5%", fontSize: "2rem" }}>Orion's NAU App: Seamlessly Connecting Maritime Operations</h1>
               <div className='p-l-10per text-left fs-18' style={{ color: "rgb(6 23 68)" }}>
                   Orion's Fleet Positioning Mobile App is a comprehensive solution designed to optimize maritime operations through real-time insights and seamless communication. With features including AIS and Vessel reports, daily updates, and dynamic dashboards for critical parameters and environmental data, the app empowers fleet managers to make informed decisions efficiently. Providing access to agency information, important events, and direct communication channels, Orion's app ensures streamlined collaboration and enhances situational awareness for maritime teams, driving efficiency and safety across the fleet.
@@ -70,7 +67,7 @@ function FPMApp(index) {
             </Col>
             
             <Col xs={12} md={5}>
-              <motion.div variants={boxVariantsR} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+              <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
                 <img src="/Images/Mockups/NauApp/NauApp3.png" alt="" className='img-fluid' />
               </motion.div>
             </Col>
@@ -100,7 +97,7 @@ function FPMApp(index) {
             </Col>
 
             <Col xs={12} md={6} className='motion-container text-left'>
-              <motion.div variants={boxVariantsR} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+              <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
               <div className='row justify-content-start'>
                       <h1 className='un-leash-command-heading' style={{fontSize:"2.5rem"}}>FEATURES & BENEFITS OF THE APP:</h1>
                       <p>

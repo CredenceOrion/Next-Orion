@@ -2,36 +2,38 @@
 import { Container, Row, Accordion, Col, Button } from "react-bootstrap";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 function PMSInventory(index) {
-  let boxVariantsL = {};
-  //let boxVariantsR = {};
-  let boxVariantsPop = {};
-  const isMobile = window.innerWidth < 1100; //Add the width you want to check for here (now 768px)
-  if (!isMobile) {
-    boxVariantsL = {
-      initial: { opacity: 0 },
-      whileInView: { opacity: 1, transition: { duration: 0.7 } },
-    };
+ const [isMobile, setIsMobile] = useState(false);
    
-    boxVariantsPop = {
-      initial: { opacity: 0, scale: 0.2 },
-      whileInView: { opacity: 1, scale: 1, transition: { duration: 1 } },
-    };
-  } else {
-    boxVariantsL = {
-      initial: { opacity: 1 },
-      whileInView: { opacity: 1 },
-    };
-    // boxVariantsR = {
-    //   initial: { opacity: 1 },
-    //   whileInView: { opacity: 1 },
-    // };
-    boxVariantsPop = {
-      initial: { opacity: 1 },
-      whileInView: { opacity: 1 },
-    };
-  }
+       useEffect(() => {
+           const checkMobile = () => window.innerWidth < 1100;
+           setIsMobile(checkMobile);
+       }, []);
+   
+     const boxVariantsL = !isMobile
+           ? {
+                 hidden: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
+                 visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+             }
+           : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+   
+       const boxVariantsR = !isMobile
+           ? {
+                 hidden: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
+                 visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+             }
+           : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+   
+       const boxVariantsPop = !isMobile
+           ? {
+                 hidden: { opacity: 0, scale: 0.2 },
+                 visible: { opacity: 1, scale: 1, transition: { duration: 1 } }
+             }
+           : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+ 
+ 
   return (
     <>
      
@@ -41,11 +43,7 @@ function PMSInventory(index) {
           <Row className="mt-5 text-start">
            
             <Col xs={12} md={6} className="motion-container">
-              <motion.div
-                variants={boxVariantsL}
-                whileInView="whileInView"
-                initial="initial"
-                viewport={{ once: true }}
+              <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}
               >
                 <h1 className='un-leash-Heading text-left'  style={{ color: "rgb(6 23 68)", paddingBottom: "3%", fontSize: "2rem" }}>NAU 2.1 - Planned Maintenance System </h1>
                 <h1 className="un-leash-command-subheading">
@@ -101,11 +99,7 @@ function PMSInventory(index) {
               </h3>
             </Col>
             <Col xs={12} md={6} className="motion-container">
-              <motion.div
-                variants={boxVariantsL}
-                whileInView="whileInView"
-                initial="initial"
-                viewport={{ once: true }}
+              <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}
               >
                 <Accordion alwaysOpen className=" text-start">
                   <Row className="g-4  CommonAccordion">
@@ -220,11 +214,7 @@ function PMSInventory(index) {
               </h1>
             </Col>
             <Col xs={12} className="motion-container">
-              <motion.div
-                variants={boxVariantsPop}
-                whileInView="whileInView"
-                initial="initial"
-                viewport={{ once: true }}
+              <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}
               >
                 <div className="features1_component-copy text-left m-t-60">
                   <div className="features-item-1">

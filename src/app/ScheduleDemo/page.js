@@ -1,43 +1,40 @@
 "use client";
 import { Container, Row, Col } from "react-bootstrap";
-
+import { useState, useEffect } from "react";
 import ContactForm from '../../components/ScheduleDemoContact';
 import { motion } from 'framer-motion';
 
 
 export default function ScheduleDemo(index) {
-  let boxVariantsL = {};
-  let boxVariantsR = {};
-  let boxVariantsPop = {};
-  const isMobile =typeof window !=="undefined" && window.innerWidth < 1100; //Add the width you want to check for here (now 768px)
-  if (!isMobile) {
-    boxVariantsL = {
-      initial: { opacity: 0 },
-      whileInView: { opacity: 1, transition: { duration: 0.7 } }
-    }
-    boxVariantsR = {
-      initial: { opacity: 0 },
-      whileInView: { opacity: 1, transition: { duration: 0.7 } }
-    }
-    boxVariantsPop = {
-      initial: { opacity: 0, scale: 0.2 },
-      whileInView: { opacity: 1, scale: 1, transition: { duration: 1 } }
-    }
-  }
-  else {
-    boxVariantsL = {
-      initial: { opacity: 1 },
-      whileInView: { opacity: 1 }
-    }
-    boxVariantsR = {
-      initial: { opacity: 1 },
-      whileInView: { opacity: 1 }
-    }
-    boxVariantsPop = {
-      initial: { opacity: 1 },
-      whileInView: { opacity: 1 }
-    }
-  }
+  const [isMobile, setIsMobile] = useState(false);
+    
+        useEffect(() => {
+            const checkMobile = () => window.innerWidth < 1100;
+            setIsMobile(checkMobile);
+        }, []);
+    
+      const boxVariantsL = !isMobile
+            ? {
+                  hidden: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
+                  visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+              }
+            : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+    
+        const boxVariantsR = !isMobile
+            ? {
+                  hidden: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
+                  visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+              }
+            : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+    
+        const boxVariantsPop = !isMobile
+            ? {
+                  hidden: { opacity: 0, scale: 0.2 },
+                  visible: { opacity: 1, scale: 1, transition: { duration: 1 } }
+              }
+            : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+  
+  
 
 
   return (
@@ -46,14 +43,14 @@ export default function ScheduleDemo(index) {
 
       <Row style={{ margin: "0", backgroundImage: `url(/Images/SchedulDemoBg.jpg)`, minHeight: "100vh", backgroundPosition: "0 0", backgroundSize: "cover" }}>
         <Container className='motion-container'>
-          <motion.div variants={boxVariantsPop} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+          <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
             <h1 className='font-bold m-t-120 m-b-80 colorWhite un-leash-Heading-schedule'>
               Schedule a Demo
             </h1>
           </motion.div>
           <Row>
             <Col xs={12} md={5} className='p-r-20 m-b-70 motion-container'>
-              <motion.div variants={boxVariantsL} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+              <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
                 <div className="HeroSchText">
                   <h1 className="font-bold m-b-30 colorWhite un-leash-green-subheading">MARITIME ENTERPRISE RESOURCE PLANNING SOLUTIONS: PIONEERING EXCELLENCE</h1>
                   <div className="m-b-10">
@@ -78,7 +75,7 @@ export default function ScheduleDemo(index) {
               </motion.div>
             </Col>
             <Col xs={12} md={7} className=' motion-container'>
-              <motion.div variants={boxVariantsR} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+              <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
                 <Row style={{ margin: "0" }}>
                   <Col xs='12' className='text-left ScheduleDemoForm'>
                     <ContactForm />

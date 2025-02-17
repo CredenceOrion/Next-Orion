@@ -2,41 +2,38 @@
 import { Container, Row, Col, Button, Accordion } from 'react-bootstrap';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-
+import { useState,useEffect } from 'react';
 
 function EDMS(index) {
-  let boxVariantsL = {};
-  let boxVariantsR = {};
-  let boxVariantsPop = {};
-  const isMobile =typeof window !=="undefined" && window.innerWidth < 1100; //Add the width you want to check for here (now 768px)
-  if (!isMobile) {
-    boxVariantsL = {
-      initial: { opacity: 0 },
-      whileInView: { opacity: 1, transition: { duration: 0.7 } }
-    }
-    boxVariantsR = {
-      initial: { opacity: 0 },
-      whileInView: { opacity: 1, transition: { duration: 0.7 } }
-    }
-    boxVariantsPop = {
-      initial: { opacity: 0, scale: 0.2 },
-      whileInView: { opacity: 1, scale: 1, transition: { duration: 1 } }
-    }
-  }
-  else {
-    boxVariantsL = {
-      initial: { opacity: 1 },
-      whileInView: { opacity: 1 }
-    }
-    boxVariantsR = {
-      initial: { opacity: 1 },
-      whileInView: { opacity: 1 }
-    }
-    boxVariantsPop = {
-      initial: { opacity: 1 },
-      whileInView: { opacity: 1 }
-    }
-  }
+ const [isMobile, setIsMobile] = useState(false);
+   
+       useEffect(() => {
+           const checkMobile = () => window.innerWidth < 1100;
+           setIsMobile(checkMobile);
+       }, []);
+   
+     const boxVariantsL = !isMobile
+           ? {
+                 hidden: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
+                 visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+             }
+           : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+   
+       const boxVariantsR = !isMobile
+           ? {
+                 hidden: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
+                 visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+             }
+           : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+   
+       const boxVariantsPop = !isMobile
+           ? {
+                 hidden: { opacity: 0, scale: 0.2 },
+                 visible: { opacity: 1, scale: 1, transition: { duration: 1 } }
+             }
+           : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+ 
+ 
   return (
     <>
 
@@ -48,7 +45,7 @@ function EDMS(index) {
         <Row className='m-l-0 m-r-0 motion-container'>
             
             <Col xs={12} sm={6}>
-              <motion.div variants={boxVariantsL} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+              <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
               <h1 className='p-l-10per un-leash-Heading text-left'  style={{ color: "rgb(6 23 68)", paddingTop:"7%",paddingBottom: "3%", fontSize: "2rem" }}>NAU 2.1 - Electronic Safety Management System </h1>
           
               <h1 className='p-l-10per un-leash-command-subheading text-left'  style={{ color: "rgb(6 23 68)", paddingTop:"0" }}>Improve Efficiency And Provide Better Experiences!</h1>
@@ -66,7 +63,7 @@ function EDMS(index) {
             </Col>
 
             <Col xs={12} sm={6}>
-              <motion.div variants={boxVariantsR} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+              <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
                 <img src="/Images/E-SMS.png" alt="E-cloud" className='p-t-5per img-fluid' />
               </motion.div>
             </Col>
@@ -88,7 +85,7 @@ function EDMS(index) {
             <Col xs={12}>
               <h3 className='text-center font-bold m-t-80 mb-5' style={{ color: "rgb(6 23 68)" }}>Key Features of NAU's e-SMS</h3>
             </Col>
-            <motion.div variants={boxVariantsPop} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+            <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
 
               <Accordion alwaysOpen className=' text-start'>
                 <Row className="g-4 CommonAccordion">
@@ -188,7 +185,7 @@ function EDMS(index) {
                
               </Col>
               <Col xs={12} md={6} className=' motion-container'>
-                <motion.div variants={boxVariantsR} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+                <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
 
                  
                   
@@ -232,7 +229,7 @@ function EDMS(index) {
             <Col xs={12} className='text-center m-t-100'>
               <h4 className='font-bold m-b-20' style={{ color: "rgb(6 23 68)", fontSize: "1.7rem" }}>By implementing NAU's e-SMS, you can experience a multitude of benefits, including:</h4>
 
-              <motion.div variants={boxVariantsPop} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+              <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
                 <div className="features1_component-copy text-left m-t-10 motion-container">
 
                   <div className="features-item-1">
@@ -312,7 +309,7 @@ function EDMS(index) {
               <img src="/Images/fleet-types.jpg" alt='Products' className='img-fluid'/>
             </Col>
             <Col xs={12} md={6} className='motion-container p-l-20'>
-              <motion.div variants={boxVariantsR} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+              <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
                 <h3 className='text-left font-bold m-t-80' style={{ color: "rgb(6 23 68)" }}>Why Choose Our E-SMS?</h3>
                 <ul className="list-items list-items-layout2 list-unstyled text-left">
                   <li>Enhanced Efficiency: Streamlined access to critical documents reduces search time and boosts productivity. </li>

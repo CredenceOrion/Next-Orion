@@ -1,43 +1,39 @@
 "use client";
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import Link from 'next/link';
-
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 function OInvent(index) {
+const [isMobile, setIsMobile] = useState(false);
+  
+      useEffect(() => {
+          const checkMobile = () => window.innerWidth < 1100;
+          setIsMobile(checkMobile);
+      }, []);
+  
+    const boxVariantsL = !isMobile
+          ? {
+                hidden: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
+                visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+            }
+          : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+  
+      const boxVariantsR = !isMobile
+          ? {
+                hidden: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
+                visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+            }
+          : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+  
+      const boxVariantsPop = !isMobile
+          ? {
+                hidden: { opacity: 0, scale: 0.2 },
+                visible: { opacity: 1, scale: 1, transition: { duration: 1 } }
+            }
+          : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
 
-  let boxVariantsL = {};
-  let boxVariantsR = {};
-  let boxVariantsPop = {};
-  const isMobile =typeof window !=="undefined" && window.innerWidth < 1100;
-  if (!isMobile) {
-    boxVariantsL = {
-      initial: { opacity: 0},
-      whileInView: { opacity: 1, transition: { duration: 0.7 } }
-    }
-    boxVariantsR = {
-      initial: { opacity: 0 },
-      whileInView: { opacity: 1, transition: { duration: 0.7 } }
-    }
-    boxVariantsPop = {
-      initial: { opacity: 0, scale: 0.2 },
-      whileInView: { opacity: 1, scale: 1, transition: { duration: 1 } }
-    }
-  }
-  else {
-    boxVariantsL = {
-      initial: { opacity: 1 },
-      whileInView: { opacity: 1 }
-    }
-    boxVariantsR = {
-      initial: { opacity: 1 },
-      whileInView: { opacity: 1 }
-    }
-    boxVariantsPop = {
-      initial: { opacity: 1 },
-      whileInView: { opacity: 1 }
-    }
-  }
+
   return (
     <>
 
@@ -47,7 +43,7 @@ function OInvent(index) {
 
           <Row className="mt-5 text-start">
             <Col xs={12} md={7} className='motion-container'>
-              <motion.div variants={boxVariantsL} whileInView="whileInView" initial="initial" viewport={{ once: true }}  >
+              <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}  >
                 <div className='row justify-content-start'>
                 <h1 className='un-leash-Heading text-left'  style={{ color: "rgb(6 23 68)", paddingBottom: "3%", fontSize: "2rem" }}>NAU 2.1 - Inventory Management and Procurement System </h1>
                   <h1 className='un-leash-command-subheading text-left'>Streamline Procurement, Manage Inventory Efficiently with NAU's Integrated System</h1>
@@ -73,7 +69,7 @@ function OInvent(index) {
           <Row className='mt-5'>
             <Col xs={12} md={2}></Col>
             <Col xs={12} className='motion-container'>
-              <motion.div variants={boxVariantsPop} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+              <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
                 <div className='layout11_item fs-20 font-bold'>NAU's Inventory Management and Procurement system is an essential tool for any shipping company looking to optimize its supply chain. By gaining complete control over your procurement processes and inventory management, you can reduce costs, improve efficiency, and ensure the smooth operation of your fleet.</div>
               </motion.div>
             </Col>
@@ -81,7 +77,7 @@ function OInvent(index) {
 
          
             <Col xs={12} className='motion-container mt-5'>
-              <motion.div variants={boxVariantsPop} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+              <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
                 <div className="features1_component-copy text-left m-t-5 ">
 
                   <div className="features-item-1">
@@ -141,7 +137,7 @@ function OInvent(index) {
             <Col xs={12} md={7} className='m-t-40 motion-container'>
               <h1 className='un-leash-command-subheading text-left'>Key Features of Our Supply Chain Management System</h1>
               {/* <h1 className='un-leash-efficient-subheading m-t-25'>"Essential Features of Inventory Management Systems":</h1> */}
-              <motion.div variants={boxVariantsL} whileInView="whileInView" initial="initial" viewport={{ once: true }}>
+              <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
                 <ul className="list-items list-items-layout2 list-unstyled text-left">
                   <li>Well-structured Stores and Inventory: Organize stores and spare inventory with ease.</li>
                   <li>Traceability and Hierarchy: Strong hierarchical structure for component traceability.</li>
@@ -171,7 +167,7 @@ function OInvent(index) {
               <img src="/Images/Mockups/inv-dashboard-mockupBottom.png" alt='Products' className='img-fluid sticky-top' />
             </Col>
             <Col xs={12} md={5} className='motion-container'>
-              <motion.div variants={boxVariantsR} whileInView="whileInView" initial="initial" viewport={{ once: true }}>
+              <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
               
               <h1 className='un-leash-command-subheading text-left' style={{ paddingTop: "3%" }}>The Challenges of Traditional Procurement</h1>
                 

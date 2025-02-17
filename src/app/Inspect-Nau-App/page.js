@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Container, Row, Accordion, Col, Button } from "react-bootstrap";
 import Link from "next/link";
 import "../../styles/CustomCss/CustomStyle.css";
@@ -26,37 +26,35 @@ import { faFileAlt, faFilePdf } from "@fortawesome/fontawesome-free-regular";
 import {} from "@fortawesome/free-regular-svg-icons";
 import {} from "@fortawesome/free-brands-svg-icons";
 export default function InspectNau(index) {
-  let boxVariantsL = {};
-  let boxVariantsR = {};
-  //let boxVariantsPop = {};
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 1100; //Add the width you want to check for here (now 768px)
-  if (!isMobile) {
-    boxVariantsL = {
-      initial: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
-      whileInView: { opacity: 1, x: 0, transition: { duration: 0.7 } },
-    };
-    boxVariantsR = {
-      initial: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
-      whileInView: { opacity: 1, x: 0, transition: { duration: 0.7 } },
-    };
-    // boxVariantsPop = {
-    //   initial: { opacity: 0, scale: 0.2 },
-    //   whileInView: { opacity: 1, scale: 1, transition: { duration: 1 } }
-    // }
-  } else {
-    boxVariantsL = {
-      initial: { opacity: 1 },
-      whileInView: { opacity: 1 },
-    };
-    boxVariantsR = {
-      initial: { opacity: 1 },
-      whileInView: { opacity: 1 },
-    };
-    // boxVariantsPop = {
-    //   initial: { opacity: 1 },
-    //   whileInView: { opacity: 1 }
-    // }
-  }
+  const [isMobile, setIsMobile] = useState(false);
+    
+        useEffect(() => {
+            const checkMobile = () => window.innerWidth < 1100;
+            setIsMobile(checkMobile);
+        }, []);
+    
+      const boxVariantsL = !isMobile
+            ? {
+                  hidden: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
+                  visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+              }
+            : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+    
+        const boxVariantsR = !isMobile
+            ? {
+                  hidden: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
+                  visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+              }
+            : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+    
+        const boxVariantsPop = !isMobile
+            ? {
+                  hidden: { opacity: 0, scale: 0.2 },
+                  visible: { opacity: 1, scale: 1, transition: { duration: 1 } }
+              }
+            : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+  
+  
 
   //scroll to Register section
   const targetRef = useRef(null);
@@ -93,11 +91,7 @@ export default function InspectNau(index) {
                       className="Minu70"
                       style={{ position: "relative" }}
                     >
-                      <motion.div
-                        variants={boxVariantsL}
-                        whileInView="whileInView"
-                        initial="initial"
-                        viewport={{ once: true }}
+                      <motion.div variants={boxVariantsL}  initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}
                       >
                         <h1
                           className="p-l-10per  BiEmpowering"
@@ -343,11 +337,7 @@ export default function InspectNau(index) {
             </Col>
 
             <Col xs={12} md={5} className="motion-container text-left">
-              <motion.div
-                variants={boxVariantsR}
-                whileInView="whileInView"
-                initial="initial"
-                viewport={{ once: true }}
+              <motion.div variants={boxVariantsR}  initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}
               >
                 <Accordion
                   alwaysOpen

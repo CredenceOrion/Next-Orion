@@ -1,44 +1,41 @@
 "use client";
 import { Container, Row, Col, Button } from 'react-bootstrap';
-
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 
 
 function VCertificate(index) {
-    let boxVariantsL = {};
-    let boxVariantsR = {};
-    let boxVariantsPop = {};
-    const isMobile =typeof window !=="undefined" && window.innerWidth < 1100;
-    if (!isMobile) {
-        boxVariantsL = {
-            initial: { opacity: 0 },
-            whileInView: { opacity: 1, transition: { duration: 0.7 } }
-        }
-        boxVariantsR = {
-            initial: { opacity: 0 },
-            whileInView: { opacity: 1, transition: { duration: 0.7 } }
-        }
-        boxVariantsPop = {
-            initial: { opacity: 0, scale: 0.2 },
-            whileInView: { opacity: 1, scale: 1, transition: { duration: 1 } }
-        }
-    }
-    else {
-        boxVariantsL = {
-            initial: { opacity: 1 },
-            whileInView: { opacity: 1 }
-        }
-        boxVariantsR = {
-            initial: { opacity: 1 },
-            whileInView: { opacity: 1 }
-        }
-        boxVariantsPop = {
-            initial: { opacity: 1 },
-            whileInView: { opacity: 1 }
-        }
-    }
+    const [isMobile, setIsMobile] = useState(false);
+      
+          useEffect(() => {
+              const checkMobile = () => window.innerWidth < 1100;
+              setIsMobile(checkMobile);
+          }, []);
+      
+        const boxVariantsL = !isMobile
+              ? {
+                    hidden: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
+                    visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+                }
+              : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+      
+          const boxVariantsR = !isMobile
+              ? {
+                    hidden: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
+                    visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+                }
+              : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+      
+          const boxVariantsPop = !isMobile
+              ? {
+                    hidden: { opacity: 0, scale: 0.2 },
+                    visible: { opacity: 1, scale: 1, transition: { duration: 1 } }
+                }
+              : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+    
+    
     return (
 
         <>
@@ -48,12 +45,12 @@ function VCertificate(index) {
                 <Container fluid className="p-l-0 p-r-0 backgroundTtachment">
                     <Row className='m-l-0 m-r-0 motion-container'>
                         <Col xs={12} md={6}>
-                            <motion.div variants={boxVariantsL} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+                            <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
                                 <img src="/Images/ProductImages/tab.png" alt="E-cloud" className='p-t-5per p-l-10per p-r-10per img-fluid' style={{ maxWidth: "90%" }} />
                             </motion.div>
                         </Col>
                         <Col xs={12} md={6}>
-                            <motion.div variants={boxVariantsR} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+                            <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
 
                             <h1 className='un-leash-Heading text-left'  style={{ color: "rgb(6 23 68)", paddingBottom: "3%",paddingTop: "5%", fontSize: "2rem" }}>NAU 2.1 - Vessel Certificate Management System </h1>
                                 <h1 className='un-leash-command-subheading text-left'>NAU's VCMS: Never Miss a Renewal Again</h1>
@@ -81,7 +78,7 @@ function VCertificate(index) {
                                     <h4 className="text-left un-leash-efficient-subheading mb-2">
                                         NAU's VCMS eliminates the hassle of manual certificate tracking by offering a comprehensive suite of features designed to:
                                     </h4>
-                                    <motion.div variants={boxVariantsL} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+                                    <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
                                         <ul className="list-items list-items-layout2 list-unstyled text-left">
                                             <li>Centralize Certificate Management: Maintain a centralized repository for all your vessel, crew, and class certificates, easily accessible from any internet-connected device. </li>
                                             <li>Automate Renewal Tracking: Define renewal dates for each certificate and receive automated alerts well in advance to ensure timely renewal.</li>

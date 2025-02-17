@@ -66,49 +66,35 @@ const whyChooseUs = [
 
 
 function NauServer(index) {
+    const [isMobile, setIsMobile] = useState(false);
+  
+    useEffect(() => {
+        const checkMobile = () => window.innerWidth < 1100;
+        setIsMobile(checkMobile);
+    }, []);
 
-    let boxVariantsL = {};
-    let boxVariantsR = {};
-    let boxVariantsPop = {};
-    let boxVariantsY = {};
-    const isMobile = typeof window !== "undefined" && window.innerWidth < 1100;
+  const boxVariantsL = !isMobile
+        ? {
+              hidden: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
+              visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+          }
+        : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
 
-    if (!isMobile) {
-        boxVariantsL = {
-            initial: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
-            whileInView: { opacity: 1, x: 0, transition: { duration: 0.7 } }
-        }
-        boxVariantsR = {
-            initial: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
-            whileInView: { opacity: 1, x: 0, transition: { duration: 0.7 } }
-        }
-        boxVariantsPop = {
-            initial: { opacity: 0, scale: 0.2 },
-            whileInView: { opacity: 1, scale: 1, transition: { duration: 1 } }
-        }
-        boxVariantsY = {
-            initial: { opacity: 0, y: index % 2 === 0 ? -350 : 350 },
-            whileInView: { opacity: 1, y: 0, transition: { duration: 0.7 } }
-        }
-    }
-    else {
-        boxVariantsL = {
-            initial: { opacity: 1 },
-            whileInView: { opacity: 1 }
-        }
-        boxVariantsR = {
-            initial: { opacity: 1 },
-            whileInView: { opacity: 1 }
-        }
-        boxVariantsPop = {
-            initial: { opacity: 1 },
-            whileInView: { opacity: 1 }
-        }
-        boxVariantsY = {
-            initial: { opacity: 1 },
-            whileInView: { opacity: 1 }
-        }
-    }
+    const boxVariantsR = !isMobile
+        ? {
+              hidden: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
+              visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+          }
+        : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+
+    const boxVariantsPop = !isMobile
+        ? {
+              hidden: { opacity: 0, scale: 0.2 },
+              visible: { opacity: 1, scale: 1, transition: { duration: 1 } }
+          }
+        : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+
+
     const [clickedIndex, setClickedIndex] = useState({});
     const [animationData, setAnimationData] = useState(null);
     useEffect(() => {
@@ -131,7 +117,7 @@ function NauServer(index) {
         <Container fluid style={{ paddingL: "0px" }}>
             <Row className='ContTopRobo'>
                 <Col xs={12} md={6}>
-                    <motion.div variants={boxVariantsPop} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+                    <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
                         <h1 className='NauHomeText'>
                             Venture into a future where adeptness reigns supreme on the oceans with NAU 2.1!
                         </h1>
@@ -151,7 +137,7 @@ function NauServer(index) {
             <Row style={{ backgroundImage: "url(/Images/Nau/DashLine.jpg)", backgroundRepeat:"no-repeat", backgroundSize:"cover" }} className='m-t-20 RoboSecCont'>
                 <Col xs={12} md={6}>
                     <div style={{ color: "white", textAlign: "left" }}>
-                        <motion.div variants={boxVariantsL} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+                        <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
                             <h1 className=' HeroText'>
                                 Sustainability
                             </h1>
@@ -162,20 +148,20 @@ function NauServer(index) {
                     </div>
                 </Col>
                 <Col xs={12} md={6}>
-                    <motion.div variants={boxVariantsR} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+                    <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
                         <img src="/Images/Nau/Fship.png" alt="Nau Ship" className='img-fluid' style={{ filter: "opacity(0.7)" }} />
                     </motion.div>
                 </Col>
             </Row>
             <Row className='Cont3'>
                 <Col xs={12} md={4}>
-                    <motion.div variants={boxVariantsL} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+                    <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
                         <img src="/Images/Nau/NauLogo.png" alt="Nau Ship" className='Cont3NauShip' />
                     </motion.div>
                 </Col>
                 <Col xs={12} md={8}>
                     <div className='Cont3Text'>
-                        <motion.div variants={boxVariantsR} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+                        <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
                             <h1 className='font-bold'>
                                 <p style={{ textAlign: "center", marginBottom:"0px" }} className=' fs-30'>Are you still relying on outdated, paper-based processes to manage your fleet?</p>
                             </h1>
@@ -191,7 +177,7 @@ function NauServer(index) {
             <Row style={{ padding: "0", position: "relative", minHeight: "500px", backgroundColor: "#204488", overflow: "hidden" }}>
                 <Container fluid className=' p-b-25 p-l-25 p-r-25'>
                     <h1 className='font-bold fs-30 p-t-35 p-b-35' style={{ color: "white" }}>System Modules</h1>
-                    <motion.div variants={boxVariantsY} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+                    <motion.div variants={boxVariantsY} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
                         <Tab.Container id="left-tabs-example" defaultActiveKey="first">
                             <Row>
                                 <Col xs={12}  md={2}>
@@ -527,7 +513,7 @@ function NauServer(index) {
                     Innovative Solutions, Proven Excellence: Pioneers in cloud-based solutions since 2009
                 </h4>
                 <Container>
-                    <motion.div variants={boxVariantsPop} whileInView="whileInView" initial="initial" viewport={{ once: true }} >
+                    <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
                         <Row xs={1} md={4} className="g-5">
                             {whyChooseUs.map((whyChooseUsData, index) => (
                                 <Col key={whyChooseUsData.id} id={`item${whyChooseUsData.id}`}>
