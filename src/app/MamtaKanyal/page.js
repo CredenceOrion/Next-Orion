@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Container, Row, Col } from "react-bootstrap";
@@ -11,18 +12,18 @@ import {
 
 
 
-function MSbhr() {
+function MMKL() {
   const [isMobile, setIsMobile] = useState(true);
   const [isPortrait, setIsPortrait] = useState(true);
 
   // Save the visiting card
   const handleDownloadVCard = () => {
-    const name = "Capt Mohit Sabharwal";
-    const phoneNumber = "+91 9810606650";
+    const name = "MAMTA KANYAL";
+    const phoneNumber = "+91 9953759337";
     const officeNumber1 = "+911244209280";
     const officeNumber2 = "+911244036622";
-    const email = "msabharwal@orionmarineconcepts.com";
-    const website = "https://www.orionmarineconcepts.com"; // Ensure URL starts with "https://"
+    const email = "mamta@orionmarineconcepts.com";
+    const website = "https://www.orionmarineconcepts.com"; 
 
     const vCardData = `
 BEGIN:VCARD
@@ -39,12 +40,12 @@ END:VCARD
     const blob = new Blob([vCardData], { type: "text/vcard" });
     const url = window.URL.createObjectURL(blob);
 
-    // Open the vCard in a new tab (iOS-Friendly)
+    // Open in a new tab (better for iOS)
     window.open(url, "_blank");
 
     setTimeout(() => {
         window.URL.revokeObjectURL(url);
-    }, 3000); // Delay to ensure download works
+    }, 3000); // Delay for iOS compatibility
 };
 
   
@@ -106,11 +107,11 @@ END:VCARD
         >
           <div className="header-content">
             <div className="header-photo">
-            <img src="/Images/Ourteam/CptM.jpg" alt="Director Operations and Technical" />
+            <img src="/Images/Ourteam/team/6.jpg" alt="Director Operations and Technical" />
             </div>
             <div className="header-titles">
-              <h2>Capt. Mohit Sabharwal</h2>
-              <h4>Director Operations and Technical</h4>
+              <h2>MAMTA KANYAL</h2>
+              <h4>Senior Manager Projects & Operations</h4>
              
 
               <div style={{ lineHeight: "1" }}>
@@ -120,9 +121,9 @@ END:VCARD
                     color: "white",
                     fontSize: "0.8rem",
                   }}
-                  href="mailto:msabharwal@orionmarineconcepts"
+                  href="mailto:mamta@orionmarineconcepts"
                 >
-                  msabharwal@orionmarineconcepts.com
+                  mamta@orionmarineconcepts.com
                 </a>
               </div>
               <div>
@@ -142,12 +143,12 @@ END:VCARD
                 <ul className="mb-1">
                  
                   <li>
-                    <a href="https://www.linkedin.com/in/captmohitsabharwal" target="_blank" rel="noreferrer">
+                    <a href="https://www.linkedin.com/in/mamta-kanyal-949706113" target="_blank" rel="noreferrer">
                       <FontAwesomeIcon icon={faLinkedin} />
                     </a>
                   </li>
                   <li>
-                    <a href="mailto:msabharwal@orionmarineconcepts" target="_blank" rel="noreferrer">
+                    <a href="mailto:mamta@orionmarineconcepts" target="_blank" rel="noreferrer">
                       <FontAwesomeIcon icon={faEnvelope} />
                     </a>
                   </li>
@@ -182,7 +183,7 @@ END:VCARD
             </div>
           </div>
         </header>
-        <div className="content-area" style={{minHeight:"calc(100vh - 224px)",backgroundImage:`url(/Images/Bi/WiredGlobe.jpg)`,backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
+        <div className="content-area" style={{minHeight:"calc(100vh - 160px)",backgroundImage:`url(/Images/Bi/WiredGlobe.jpg)`,backgroundRepeat:"no-repeat",backgroundSize:"cover"}}>
           <div className="animated-sections" style={{height:"100%",position:"relative",backgroundColor:"transparent"}}>
             <section
               data-id="about-me"
@@ -479,4 +480,4 @@ END:VCARD
   );
 }
 
-export default MSbhr;
+export default MMKL;

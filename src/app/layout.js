@@ -1,9 +1,7 @@
 import HeaderFooterWrapper from "../components/HeaderFooterWrapper";
 import ScrollButton from "../components/ScrollTopButton/ScrollTopButton";  
 import ScrollToTop from "../components/ScrollTopButton/ScrollToTop";  
-import "../styles/CustomCss/CustomStyle.css";
-import "../styles/CustomCss/Margins.css";
-import "bootstrap/dist/css/bootstrap.min.css"; 
+
 
 export const metadata = {
   title: "Orion Marine Concepts", 
