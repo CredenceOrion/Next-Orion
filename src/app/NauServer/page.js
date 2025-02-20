@@ -69,8 +69,8 @@ function NauServer(index) {
     const [isMobile, setIsMobile] = useState(false);
   
     useEffect(() => {
-        const checkMobile = () => window.innerWidth < 1100;
-        setIsMobile(checkMobile);
+       
+        setIsMobile(window.innerWidth < 1100);
     }, []);
 
   const boxVariantsL = !isMobile
@@ -93,6 +93,14 @@ function NauServer(index) {
               visible: { opacity: 1, scale: 1, transition: { duration: 1 } }
           }
         : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+
+        const boxVariantsY = !isMobile
+        ? {
+              hidden: { opacity: 0, y: index % 2 === 0 ? -350 : 350 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.7 } }
+          }
+        : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+        
 
 
     const [clickedIndex, setClickedIndex] = useState({});

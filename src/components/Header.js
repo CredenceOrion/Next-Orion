@@ -280,7 +280,7 @@ function HeaderComponent() {
                   href="/privacy-policy" as={Link} prefetch={true}
                 >
                   <img
-                     src="/Images/CommonImages/CompanyPolicy.png"
+                     src="/Images/CommonImages/PrivacyPolicyLogo.png"
                     alt="Privacy Policy"
                     className="HeaderIcons"
                   />

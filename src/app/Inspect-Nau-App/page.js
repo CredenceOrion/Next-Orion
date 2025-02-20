@@ -1,36 +1,18 @@
 "use client";
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Container, Row, Accordion, Col, Button } from "react-bootstrap";
 import Link from "next/link";
-import "../../styles/CustomCss/CustomStyle.css";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPenClip,
-  faMicrophone,
-  faPersonChalkboard,
-  faCity,
-  faArrowCircleRight,
-  faRightToBracket,
-  faCheck,
-  faTimes
-  
-} from "@fortawesome/free-solid-svg-icons";
-import {} from "@fortawesome/fontawesome-svg-core";
-import {} from "@fortawesome/fontawesome-free-solid";
-import {} from "@fortawesome/fontawesome-free";
+import {faPenClip,faMicrophone,faPersonChalkboard,faCity,faArrowCircleRight,faRightToBracket,faCheck,faTimes} from "@fortawesome/free-solid-svg-icons";
 import { faFileAlt, faFilePdf } from "@fortawesome/fontawesome-free-regular";
 
-
-
-import {} from "@fortawesome/free-regular-svg-icons";
-import {} from "@fortawesome/free-brands-svg-icons";
 export default function InspectNau(index) {
   const [isMobile, setIsMobile] = useState(false);
     
         useEffect(() => {
-            const checkMobile = () => window.innerWidth < 1100;
-            setIsMobile(checkMobile);
+         
+            setIsMobile(window.innerWidth < 1100);
         }, []);
     
       const boxVariantsL = !isMobile
@@ -47,13 +29,7 @@ export default function InspectNau(index) {
               }
             : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
     
-        const boxVariantsPop = !isMobile
-            ? {
-                  hidden: { opacity: 0, scale: 0.2 },
-                  visible: { opacity: 1, scale: 1, transition: { duration: 1 } }
-              }
-            : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
-  
+         
   
 
   //scroll to Register section
@@ -337,8 +313,7 @@ export default function InspectNau(index) {
             </Col>
 
             <Col xs={12} md={5} className="motion-container text-left">
-              <motion.div variants={boxVariantsR}  initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}
-              >
+              <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}>
                 <Accordion
                   alwaysOpen
                   defaultActiveKey="0"
