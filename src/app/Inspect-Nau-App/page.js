@@ -67,7 +67,7 @@ export default function InspectNau(index) {
                       className="Minu70"
                       style={{ position: "relative" }}
                     >
-                      <motion.div variants={boxVariantsL}  initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}
+                      <motion.div variants={boxVariantsL}  initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}
                       >
                         <h1
                           className="p-l-10per  BiEmpowering"

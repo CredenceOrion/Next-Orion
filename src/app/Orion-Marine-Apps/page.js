@@ -58,7 +58,7 @@ export default function OrionMarineApps(index) {
                 <Container className="p-t-80 p-b-80">
                   <Row className="m-l-0 m-r-0 full-height align-items-center">
                     <Col xs={12} md={6} style={{ position: "relative" }}>
-                      <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}
+                      <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}
                       >
                         <h1
                           className="p-l-10per BiEmpowering"

@@ -46,12 +46,12 @@ function ShipCrew(index) {
             <Col xs={12} md={5}>
               <motion.div variants={boxVariantsL} initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }} >
+            viewport={{ once: true, amount: 0.1 }} >
                 <img src="/Images/Mockups/Crew-dashboard-mockup.png" alt="E-cloud" className='p-t-5per img-fluid' />
               </motion.div>
             </Col>
             <Col xs={12} md={7}>
-              <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+              <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
                 <h1 className='p-l-10per BiEmpowering' style={{ color: "rgb(6 23 68)", paddingTop: "7%", fontSize: "2rem" }}>NAU's Crew Management System</h1>
                 <h1 className="p-l-10per un-leash-command-subheading text-left" style={{ color: "rgb(6 23 68)" }}>Build a High-Performing Crew with Orion's Streamlined Crew Management System</h1>
 
@@ -63,7 +63,7 @@ function ShipCrew(index) {
 
                 </div>
               </motion.div>
-              <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} transition={{ duration: 1.1 }}  >
+              <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} transition={{ duration: 1.1 }}  >
                 <h1 className="p-l-10per un-leash-command-subheading text-left" style={{ color: "rgb(6 23 68)", paddingTop: "1%" }}>Why Crew Management Matters</h1>
                 <div className='p-l-10per text-left fs-18' style={{ color: "rgb(6 23 68)" }}>
                   Effective crew management goes beyond simply filling positions. It's about building a cohesive team of skilled professionals who are committed to safety, efficiency, and operational excellence.
@@ -80,7 +80,7 @@ function ShipCrew(index) {
               <Row className="mt-5 text-start">
 
                 <Col xs={12} md={6} className='motion-container'>
-                  <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+                  <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
 
                     <Accordion className=' text-start'>
                       <Row className="g-4 CommonAccordion">
@@ -182,7 +182,7 @@ function ShipCrew(index) {
                   <Col xs={12}>
 
                     <Row className='mt-3 motion-container'>
-                      <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}>
+                      <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}>
 
                         <Col xs={12} >
                           <div className='layout11_item fs-20 font-bold'>
@@ -192,7 +192,7 @@ function ShipCrew(index) {
 
                       </motion.div>
                       <Col xs={12} md={6} className='motion-container'>
-                        <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+                        <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
                           <h1 className='un-leash-command-subheading mt-5'> Ensuring Maritime Excellence </h1>
                           <p style={{ backgroundColor: "white", padding: "5px", borderRadius: "10px" }}>
                             Orion's Crew Management System stands as a cornerstone of maritime excellence.
@@ -207,7 +207,7 @@ function ShipCrew(index) {
                         </motion.div>
                       </Col>
                       <Col xs={12} md={6}>
-                        <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+                        <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
                           <h1 className='un-leash-command-subheading mt-5'>Candidate Briefing, Vessel Assignment & Travel</h1>
                           <p style={{ backgroundColor: "white", padding: "5px", borderRadius: "10px" }}>
                             The fleet department can conduct, manage and maintain staff briefing records.
@@ -229,7 +229,7 @@ function ShipCrew(index) {
                     <h3 style={{ color: "#3d3370", fontWeight: "bold"}}>Key Benefits</h3>
                   </Col>
                   <Col xs={12} className='motion-container'>
-                    <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+                    <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
                       <div className="features1_component-copy text-left m-t-5">
 
                         <div className="features-item-1">

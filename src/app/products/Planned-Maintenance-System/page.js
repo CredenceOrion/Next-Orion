@@ -43,7 +43,7 @@ function PMSInventory(index) {
           <Row className="mt-5 text-start">
            
             <Col xs={12} md={6} className="motion-container">
-              <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}
+              <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}
               >
                 <h1 className='un-leash-Heading text-left'  style={{ color: "rgb(6 23 68)", paddingBottom: "3%", fontSize: "2rem" }}>NAU 2.1 - Planned Maintenance System </h1>
                 <h1 className="un-leash-command-subheading">
@@ -99,7 +99,7 @@ function PMSInventory(index) {
               </h3>
             </Col>
             <Col xs={12} md={6} className="motion-container">
-              <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}
+              <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}
               >
                 <Accordion alwaysOpen className=" text-start">
                   <Row className="g-4  CommonAccordion">
@@ -214,7 +214,7 @@ function PMSInventory(index) {
               </h1>
             </Col>
             <Col xs={12} className="motion-container">
-              <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }}
+              <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }}
               >
                 <div className="features1_component-copy text-left m-t-60">
                   <div className="features-item-1">

@@ -42,23 +42,23 @@ function QHSSE(index) {
                 <Container fluid className="p-l-0 p-r-0 backgroundTtachment">
                     <Row className='m-l-0 m-r-0 motion-container'>
                         <Col xs={12} md={5}>
-                            <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+                            <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
                                 <img src="/Images/ProductImages/qhsse_cover.png" alt="E-cloud" className='p-t-5per img-fluid' />
                             </motion.div>
                         </Col>
                         <Col xs={12} md={7}>
-                            <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+                            <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
                             <h1 className='p-l-10per BiEmpowering'  style={{ color: "rgb(6 23 68)", paddingTop: "7%",fontSize:"2rem" }}>NAU's Quality, Health, Safety, Security and Environment  </h1>
                             {/* <h4 className='p-l-10per BiEmpowering'  style={{ color: "rgb(6 23 68)", paddingTop: "1%", fontSize: "2rem" }}>Safeguarding lives, environment, and excellence.</h4> */}
                             </motion.div>
-                            <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.9 }} >
+                            <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} transition={{ duration: 0.9 }} >
                                 <h1 className="p-l-10per un-leash-command-subheading text-left" style={{ color: "rgb(6 23 68)", paddingTop: "1%" }}>Ensure Safety, Efficiency, and Compliance with NAU's QHSSE Module  </h1>
                                 <div className='p-l-10per text-left fs-18' style={{ color: "rgb(6 23 68)" }}>
                                     NAU's QHSSE module is a comprehensive software solution designed to empower shipping companies to manage all aspects of Quality, Health, Safety, Security, and Environment (QHSSE).
                                     This user-friendly, web-based system streamlines QHSSE processes, minimizes paperwork, and ensures regulatory compliance, all while promoting a culture of safety and environmental responsibility.
                                 </div>
                             </motion.div>
-                            <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} transition={{ duration: 1.1 }}  >
+                            <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} transition={{ duration: 1.1 }}  >
                                 <h1 className="p-l-10per un-leash-command-subheading text-left" style={{ color: "rgb(6 23 68)", paddingTop: "1%" }}>Invest in Your Future with NAU's QHSSE Module</h1>
                                 <div className='p-l-10per text-left fs-18' style={{ color: "rgb(6 23 68)" }}>
                                     Our QHSSE module is an investment in the safety, efficiency, and environmental sustainability of your shipping operations.
@@ -73,7 +73,7 @@ function QHSSE(index) {
                         <Container>
                             <Row className="mt-5 text-start">
                                 <Col xs={12} className='motion-container text-center'>
-                                    <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+                                    <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
                                         <h1 className='un-leash-command-heading'>How NAU's QHSSE Module Saves You Time and Money</h1>
                                         <h1 className='un-leash-efficient-subheading m-t-25'>NAU's QHSSE module offers a multitude of features designed to streamline your QHSSE operations and reduce administrative costs:</h1>
 
@@ -88,7 +88,7 @@ function QHSSE(index) {
 
 
 
-                                    <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+                                    <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
 
                                         <Accordion className=' text-start'>
                                             <Row className="g-4 CommonAccordion">
@@ -182,7 +182,7 @@ function QHSSE(index) {
 
                         <Col xs={12} md={6}>
                             <div className="features1_component-copy text-left m-t-5 motion-container" style={{ gridTemplateColumns: "1fr" }}>
-                                <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+                                <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
                                     <div className="features-item-1">
                                         <div className="layout11_item" style={{ padding: "1rem", marginBottom: "1rem" }}>
                                             <div className="layout11_icon-wrapper"><img src="/Images/SVG/flagsimmediately-o.svg" loading="lazy" alt="" /></div>

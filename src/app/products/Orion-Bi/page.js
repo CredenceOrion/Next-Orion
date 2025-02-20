@@ -45,7 +45,7 @@ export default function OrionPowerBi(index) {
                     <Row className='m-l-0 m-r-0 motion-container'>
                        
                         <Col xs={12} md={6}>
-                            <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+                            <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
 
 
                                 <h1 className='un-leash-green-subheading text-left' style={{ paddingTop: "7%" }}>ORION BI</h1>
@@ -69,7 +69,7 @@ export default function OrionPowerBi(index) {
                             </motion.div>
                         </Col>
                         <Col xs={12} md={6}>
-                            <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+                            <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
                                 <img src="/Images/Mockups/BiMockup2.png" alt="E-cloud" className='p-t-5per img-fluid' style={{ maxWidth: "90%" }} />
                             </motion.div>
                         </Col>
@@ -80,7 +80,7 @@ export default function OrionPowerBi(index) {
                         <Container>
                             <Row className='mt-5'>
                                 <Col xs={12} md={6} className='motion-container'>
-                                    <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+                                    <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
 
                                         <Accordion className='mb-3 text-start' defaultActiveKey="0">
                                             <Row className="g-4 CommonAccordion">

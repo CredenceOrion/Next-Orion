@@ -44,7 +44,7 @@ function PerformanceMonitoring(index) {
                 variants={boxVariantsL}
                 initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
               >
                 <img
                   src="/Images/Mockups/fleet-dashboard-mockup.png"
@@ -58,7 +58,7 @@ function PerformanceMonitoring(index) {
                 variants={boxVariantsR}
                 initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
               >
                 <h1
                   className="p-l-10per BiEmpowering"
@@ -140,7 +140,7 @@ function PerformanceMonitoring(index) {
                     variants={boxVariantsL}
                     initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
                   >
                     <Accordion alwaysOpen className="text-start">
                       <Row className="CommonAccordion m-t-40">
@@ -440,7 +440,7 @@ function PerformanceMonitoring(index) {
                   variants={boxVariantsPop}
                   initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
                 >
                   <Container fluid className="m-t-40">
                     <div className="snip1276">
@@ -512,7 +512,7 @@ function PerformanceMonitoring(index) {
                     variants={boxVariantsPop}
                     initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.1 }}
                   >
                     <h3
                       className="text-left font-bold"

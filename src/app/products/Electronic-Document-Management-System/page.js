@@ -45,7 +45,7 @@ function EDMS(index) {
         <Row className='m-l-0 m-r-0 motion-container'>
             
             <Col xs={12} sm={6}>
-              <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+              <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
               <h1 className='p-l-10per un-leash-Heading text-left'  style={{ color: "rgb(6 23 68)", paddingTop:"7%",paddingBottom: "3%", fontSize: "2rem" }}>NAU 2.1 - Electronic Safety Management System </h1>
           
               <h1 className='p-l-10per un-leash-command-subheading text-left'  style={{ color: "rgb(6 23 68)", paddingTop:"0" }}>Improve Efficiency And Provide Better Experiences!</h1>
@@ -63,7 +63,7 @@ function EDMS(index) {
             </Col>
 
             <Col xs={12} sm={6}>
-              <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+              <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
                 <img src="/Images/E-SMS.png" alt="E-cloud" className='p-t-5per img-fluid' />
               </motion.div>
             </Col>
@@ -85,7 +85,7 @@ function EDMS(index) {
             <Col xs={12}>
               <h3 className='text-center font-bold m-t-80 mb-5' style={{ color: "rgb(6 23 68)" }}>Key Features of NAU's e-SMS</h3>
             </Col>
-            <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+            <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
 
               <Accordion alwaysOpen className=' text-start'>
                 <Row className="g-4 CommonAccordion">
@@ -185,7 +185,7 @@ function EDMS(index) {
                
               </Col>
               <Col xs={12} md={6} className=' motion-container'>
-                <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+                <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
 
                  
                   
@@ -229,7 +229,7 @@ function EDMS(index) {
             <Col xs={12} className='text-center m-t-100'>
               <h4 className='font-bold m-b-20' style={{ color: "rgb(6 23 68)", fontSize: "1.7rem" }}>By implementing NAU's e-SMS, you can experience a multitude of benefits, including:</h4>
 
-              <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+              <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
                 <div className="features1_component-copy text-left m-t-10 motion-container">
 
                   <div className="features-item-1">
@@ -309,7 +309,7 @@ function EDMS(index) {
               <img src="/Images/fleet-types.jpg" alt='Products' className='img-fluid'/>
             </Col>
             <Col xs={12} md={6} className='motion-container p-l-20'>
-              <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+              <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
                 <h3 className='text-left font-bold m-t-80' style={{ color: "rgb(6 23 68)" }}>Why Choose Our E-SMS?</h3>
                 <ul className="list-items list-items-layout2 list-unstyled text-left">
                   <li>Enhanced Efficiency: Streamlined access to critical documents reduces search time and boosts productivity. </li>

@@ -55,7 +55,7 @@ export default function OurTeam(index) {
                     <Row>
                         <Col md={1}></Col>
                         <Col xs={12} md={5} className="motion-container">
-                            <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+                            <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
                                 <div className="col-12 text-left">
                                     <h4 style={{ color: "#5864FF", fontWeight: '600', marginBottom: '20px' }}>MEET OUR DIRECTOR</h4>
                                     <h2 style={{ fontWeight: '600', marginBottom: '20px' }}>CAPTAIN MOHIT SABHARWAL</h2>
@@ -90,7 +90,7 @@ export default function OurTeam(index) {
                             </motion.div>
                         </Col>
                         <Col xs={12} md={5} className="motion-container">
-                            <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+                            <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
                                 <div className="col-12" style={{ borderRadius: "25px", overflow: "hidden" }}>
                                     <img alt='orion ceo' src="/Images/Ourteam/CptM.jpg" className="img-fluid" />
                                 </div>
@@ -100,7 +100,7 @@ export default function OurTeam(index) {
                     </Row>
                 </Container>
                 <Container className="m-t-120 motion-container">
-                    <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+                    <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
                         <Row>
                             <h1 className="m-b-40 font-bold">TEAM ORION MARINE CONCEPTS</h1>
                             <h5 className="m-b-40" style={{ lineHeight: "1.8" }}>
@@ -111,13 +111,13 @@ export default function OurTeam(index) {
                             <OurTeamManagement/>
                         </Row>
                     </motion.div>
-                    <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+                    <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
                         <Row className="m-t-50">
                             <h2 className="m-b-50 font-bold">MEET OUR DEVS</h2>
                             <OurTeamDevs/>
                         </Row>
                     </motion.div>
-                    <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} >
+                    <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
                         <Row className="m-t-50">
                             <h2 className="m-b-50 font-bold">OUR IMPLEMENTATION, SUPPORT & DEPLOYMENT</h2>
                             <OurSupportTeam/>
