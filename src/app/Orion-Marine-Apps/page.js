@@ -11,41 +11,39 @@ import {} from "@fortawesome/fontawesome-free";
 import {} from "@fortawesome/fontawesome-free-regular";
 import { useState, useEffect } from "react";
 
-
-export default function OrionMarineApps(index) {
+export default function OrionMarineApps({index}) {
   const [isMobile, setIsMobile] = useState(false);
-    
-        useEffect(() => {
-            const checkMobile = () => window.innerWidth < 1100;
-            setIsMobile(checkMobile);
-        }, []);
-    
-      const boxVariantsL = !isMobile
-            ? {
-                  hidden: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
-                  visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
-              }
-            : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
-    
-        const boxVariantsR = !isMobile
-            ? {
-                  hidden: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
-                  visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
-              }
-            : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
-    
-        const boxVariantsPop = !isMobile
-            ? {
-                  hidden: { opacity: 0, scale: 0.2 },
-                  visible: { opacity: 1, scale: 1, transition: { duration: 1 } }
-              }
-            : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
-  
-  
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 1100);
+    handleResize(); // Set initial state
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const boxVariantsL = !isMobile
+    ? {
+        hidden: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
+        visible: { opacity: 1, x: 0, transition: { duration: 0.7 } },
+      }
+    : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+
+  const boxVariantsR = !isMobile
+    ? {
+        hidden: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
+        visible: { opacity: 1, x: 0, transition: { duration: 0.7 } },
+      }
+    : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+
+  const boxVariantsPop = !isMobile
+    ? {
+        hidden: { opacity: 0, scale: 0.2 },
+        visible: { opacity: 1, scale: 1, transition: { duration: 1 } },
+      }
+    : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+
   return (
     <>
-     
-
       <Row className="m-l-0 m-r-0 p-l-0 p-r-0">
         <Container fluid className="p-l-0 p-r-0 ">
           <Row className="m-l-0 m-r-0 motion-container">
@@ -53,64 +51,127 @@ export default function OrionMarineApps(index) {
               <Container
                 fluid
                 className="p-l-0 p-r-0 backgroundTtachment"
-                style={{ backgroundImage: `url(/Images/OrionAppsBannerbg-main.jpg)` }}
+                style={{
+                  backgroundImage: `url(/Images/OrionAppsBannerbg-main.jpg)`,
+                }}
               >
                 <Container className="p-t-80 p-b-80">
                   <Row className="m-l-0 m-r-0 full-height align-items-center">
                     <Col xs={12} md={6} style={{ position: "relative" }}>
-                      <motion.div 
-                      variants={!isMobile ? boxVariantsL : undefined} 
-                      whileInView={!isMobile ? "visible" : undefined} 
-                      initial={!isMobile ? "hidden" : undefined} 
-                      viewport={!isMobile ? { once: true, amount: 0.1 } : undefined}
-                      >
-                        <h1
-                          className="p-l-10per BiEmpowering"
-                          style={{color: "#ffffff", paddingTop: "7%", fontSize: "2rem"}}
+                      {!isMobile ? (
+                        <motion.div
+                          variants={boxVariantsL}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: true, amount: 0.1 }}
                         >
-                          NAU Suite of Maritime Solutions
-                        </h1>
-                        <h1
-                          className="p-l-10per  BiEmpowering"
-                          style={{
-                            color: "rgb(255 255 255)",
-                            paddingTop: "3%",
-                            fontSize: "2rem",
-                          }}
-                        >
-                          Revolutionizing Maritime Operations
-                        </h1>
-                        <div
-                          className="p-l-10per  text-left fs-18"
-                          style={{ color: "rgb(255 255 255)" }}
-                        >
-                          Redefine inspections and fleet management with
-                          innovative digital tools crafted for unparalleled
-                          efficiency, compliance, and operational performance.
-                          The NAU Suite empowers maritime professionals to
-                          achieve new benchmarks in safety and productivity.
+                          <h1
+                            className="p-l-10per BiEmpowering"
+                            style={{
+                              color: "#ffffff",
+                              paddingTop: "7%",
+                              fontSize: "2rem",
+                            }}
+                          >
+                            NAU Suite of Maritime Solutions
+                          </h1>
+                          <h1
+                            className="p-l-10per  BiEmpowering"
+                            style={{
+                              color: "rgb(255 255 255)",
+                              paddingTop: "3%",
+                              fontSize: "2rem",
+                            }}
+                          >
+                            Revolutionizing Maritime Operations
+                          </h1>
+                          <div
+                            className="p-l-10per  text-left fs-18"
+                            style={{ color: "rgb(255 255 255)" }}
+                          >
+                            Redefine inspections and fleet management with
+                            innovative digital tools crafted for unparalleled
+                            efficiency, compliance, and operational performance.
+                            The NAU Suite empowers maritime professionals to
+                            achieve new benchmarks in safety and productivity.
+                          </div>
+                          <h1
+                            className="p-l-10per  BiEmpowering"
+                            style={{
+                              color: "rgb(255 255 255)",
+                              paddingTop: "7%",
+                              fontSize: "2rem",
+                            }}
+                          >
+                            Empowering Mariners, Enhancing Operations
+                          </h1>
+                          <div
+                            className="p-l-10per  text-left fs-18"
+                            style={{ color: "rgb(255 255 255)" }}
+                          >
+                            Experience purpose-built applications tailored to
+                            streamline inspections and optimize fleet
+                            performance. From comprehensive audits to real-time
+                            insights, our tools are designed to simplify complex
+                            operations and drive excellence across the maritime
+                            sector.
+                          </div>
+                        </motion.div>
+                      ) : (
+                        <div>
+                          <h1
+                            className="p-l-10per BiEmpowering"
+                            style={{
+                              color: "#ffffff",
+                              paddingTop: "7%",
+                              fontSize: "2rem",
+                            }}
+                          >
+                            NAU Suite of Maritime Solutions
+                          </h1>
+                          <h1
+                            className="p-l-10per  BiEmpowering"
+                            style={{
+                              color: "rgb(255 255 255)",
+                              paddingTop: "3%",
+                              fontSize: "2rem",
+                            }}
+                          >
+                            Revolutionizing Maritime Operations
+                          </h1>
+                          <div
+                            className="p-l-10per  text-left fs-18"
+                            style={{ color: "rgb(255 255 255)" }}
+                          >
+                            Redefine inspections and fleet management with
+                            innovative digital tools crafted for unparalleled
+                            efficiency, compliance, and operational performance.
+                            The NAU Suite empowers maritime professionals to
+                            achieve new benchmarks in safety and productivity.
+                          </div>
+                          <h1
+                            className="p-l-10per  BiEmpowering"
+                            style={{
+                              color: "rgb(255 255 255)",
+                              paddingTop: "7%",
+                              fontSize: "2rem",
+                            }}
+                          >
+                            Empowering Mariners, Enhancing Operations
+                          </h1>
+                          <div
+                            className="p-l-10per  text-left fs-18"
+                            style={{ color: "rgb(255 255 255)" }}
+                          >
+                            Experience purpose-built applications tailored to
+                            streamline inspections and optimize fleet
+                            performance. From comprehensive audits to real-time
+                            insights, our tools are designed to simplify complex
+                            operations and drive excellence across the maritime
+                            sector.
+                          </div>
                         </div>
-                        <h1
-                          className="p-l-10per  BiEmpowering"
-                          style={{
-                            color: "rgb(255 255 255)",
-                            paddingTop: "7%",
-                            fontSize: "2rem",
-                          }}
-                        >
-                          Empowering Mariners, Enhancing Operations
-                        </h1>
-                        <div
-                          className="p-l-10per  text-left fs-18"
-                          style={{ color: "rgb(255 255 255)" }}
-                        >
-                          Experience purpose-built applications tailored to
-                          streamline inspections and optimize fleet performance.
-                          From comprehensive audits to real-time insights, our
-                          tools are designed to simplify complex operations and
-                          drive excellence across the maritime sector.
-                        </div>
-                      </motion.div>
+                      )}
                     </Col>
                     <Col md={6} xs={12} className="p-r-100 p-l-100">
                       <div className="mockup">
