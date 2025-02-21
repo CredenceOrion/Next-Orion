@@ -5,33 +5,33 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 function PerformanceMonitoring(index) {
-   const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-    useEffect(() => {
-        const checkMobile = () => window.innerWidth < 1100;
-        setIsMobile(checkMobile);
-    }, []);
+   useEffect(() => {
+       const checkMobile = () => window.innerWidth < 1100;
+       setIsMobile(checkMobile);
+   }, []);
 
-  const boxVariantsL = !isMobile
-        ? {
-              hidden: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
-              visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
-          }
-        : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+ const boxVariantsL = !isMobile
+       ? {
+             hidden: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
+             visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+         }
+       : { hidden: { opacity: 1, x:0 }, visible: { opacity: 1, x:0 } };
 
-    const boxVariantsR = !isMobile
-        ? {
-              hidden: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
-              visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
-          }
-        : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+   const boxVariantsR = !isMobile
+       ? {
+             hidden: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
+             visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+         }
+       : { hidden: { opacity: 1, x:0 }, visible: { opacity: 1, x:0 } };
 
-    const boxVariantsPop = !isMobile
-        ? {
-              hidden: { opacity: 0, scale: 0.2 },
-              visible: { opacity: 1, scale: 1, transition: { duration: 1 } }
-          }
-        : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+   const boxVariantsPop = !isMobile
+       ? {
+             hidden: { opacity: 0, scale: 0.2 },
+             visible: { opacity: 1, scale: 1, transition: { duration: 1 } }
+         }
+       : { hidden: { opacity: 1, scale: 1 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } } };
   return (
     <>
     
@@ -44,7 +44,7 @@ function PerformanceMonitoring(index) {
                 variants={boxVariantsL}
                 initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: true, amount: 0 }}
               >
                 <img
                   src="/Images/Mockups/fleet-dashboard-mockup.png"
@@ -58,7 +58,7 @@ function PerformanceMonitoring(index) {
                 variants={boxVariantsR}
                 initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: true, amount: 0 }}
               >
                 <h1
                   className="p-l-10per BiEmpowering"

@@ -7,32 +7,32 @@ import { useState, useEffect } from 'react';
 
 export default function OrionPowerBi(index) {
     const [isMobile, setIsMobile] = useState(false);
-      
-          useEffect(() => {
-              const checkMobile = () => window.innerWidth < 1100;
-              setIsMobile(checkMobile);
-          }, []);
-      
-        const boxVariantsL = !isMobile
-              ? {
-                    hidden: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
-                    visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
-                }
-              : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
-      
-          const boxVariantsR = !isMobile
-              ? {
-                    hidden: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
-                    visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
-                }
-              : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
-      
-          const boxVariantsPop = !isMobile
-              ? {
-                    hidden: { opacity: 0, scale: 0.2 },
-                    visible: { opacity: 1, scale: 1, transition: { duration: 1 } }
-                }
-              : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+  
+     useEffect(() => {
+         const checkMobile = () => window.innerWidth < 1100;
+         setIsMobile(checkMobile);
+     }, []);
+  
+   const boxVariantsL = !isMobile
+         ? {
+               hidden: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
+               visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+           }
+         : { hidden: { opacity: 1, x:0 }, visible: { opacity: 1, x:0 } };
+  
+     const boxVariantsR = !isMobile
+         ? {
+               hidden: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
+               visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+           }
+         : { hidden: { opacity: 1, x:0 }, visible: { opacity: 1, x:0 } };
+  
+     const boxVariantsPop = !isMobile
+         ? {
+               hidden: { opacity: 0, scale: 0.2 },
+               visible: { opacity: 1, scale: 1, transition: { duration: 1 } }
+           }
+         : { hidden: { opacity: 1, scale: 1 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } } };
     
     
     return (
@@ -45,7 +45,7 @@ export default function OrionPowerBi(index) {
                     <Row className='m-l-0 m-r-0 motion-container'>
                        
                         <Col xs={12} md={6}>
-                            <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
+                            <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0 }} >
 
 
                                 <h1 className='un-leash-green-subheading text-left' style={{ paddingTop: "7%" }}>ORION BI</h1>
@@ -69,7 +69,7 @@ export default function OrionPowerBi(index) {
                             </motion.div>
                         </Col>
                         <Col xs={12} md={6}>
-                            <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
+                            <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0 }} >
                                 <img src="/Images/Mockups/BiMockup2.png" alt="E-cloud" className='p-t-5per img-fluid' style={{ maxWidth: "90%" }} />
                             </motion.div>
                         </Col>
@@ -80,7 +80,7 @@ export default function OrionPowerBi(index) {
                         <Container>
                             <Row className='mt-5'>
                                 <Col xs={12} md={6} className='motion-container'>
-                                    <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
+                                    <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0 }} >
 
                                         <Accordion className='mb-3 text-start' defaultActiveKey="0">
                                             <Row className="g-4 CommonAccordion">

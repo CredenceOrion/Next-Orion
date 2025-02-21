@@ -9,34 +9,33 @@ import OurTeamDevs from "../../components/OurTeamDevs/DevsTeam";
 import OurSupportTeam from "../../components/OurTeamSupport/SupportTeam";
 
 export default function OurTeam(index) {
-
     const [isMobile, setIsMobile] = useState(false);
-      
-          useEffect(() => {
-              const checkMobile = () => window.innerWidth < 1100;
-              setIsMobile(checkMobile);
-          }, []);
-      
-        const boxVariantsL = !isMobile
-              ? {
-                    hidden: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
-                    visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
-                }
-              : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
-      
-          const boxVariantsR = !isMobile
-              ? {
-                    hidden: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
-                    visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
-                }
-              : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
-      
-          const boxVariantsPop = !isMobile
-              ? {
-                    hidden: { opacity: 0, scale: 0.2 },
-                    visible: { opacity: 1, scale: 1, transition: { duration: 1 } }
-                }
-              : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+ 
+     useEffect(() => {
+         const checkMobile = () => window.innerWidth < 1100;
+         setIsMobile(checkMobile);
+     }, []);
+ 
+   const boxVariantsL = !isMobile
+         ? {
+               hidden: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
+               visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+           }
+         : { hidden: { opacity: 1, x:0 }, visible: { opacity: 1, x:0 } };
+ 
+     const boxVariantsR = !isMobile
+         ? {
+               hidden: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
+               visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
+           }
+         : { hidden: { opacity: 1, x:0 }, visible: { opacity: 1, x:0 } };
+ 
+     const boxVariantsPop = !isMobile
+         ? {
+               hidden: { opacity: 0, scale: 0.2 },
+               visible: { opacity: 1, scale: 1, transition: { duration: 1 } }
+           }
+         : { hidden: { opacity: 1, scale: 1 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } } };
     
     
 
@@ -55,7 +54,7 @@ export default function OurTeam(index) {
                     <Row>
                         <Col md={1}></Col>
                         <Col xs={12} md={5} className="motion-container">
-                            <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
+                            <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0 }} >
                                 <div className="col-12 text-left">
                                     <h4 style={{ color: "#5864FF", fontWeight: '600', marginBottom: '20px' }}>MEET OUR DIRECTOR</h4>
                                     <h2 style={{ fontWeight: '600', marginBottom: '20px' }}>CAPTAIN MOHIT SABHARWAL</h2>
@@ -90,7 +89,7 @@ export default function OurTeam(index) {
                             </motion.div>
                         </Col>
                         <Col xs={12} md={5} className="motion-container">
-                            <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
+                            <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0 }} >
                                 <div className="col-12" style={{ borderRadius: "25px", overflow: "hidden" }}>
                                     <img alt='orion ceo' src="/Images/Ourteam/CptM.jpg" className="img-fluid" />
                                 </div>
@@ -100,7 +99,7 @@ export default function OurTeam(index) {
                     </Row>
                 </Container>
                 <Container className="m-t-120 motion-container">
-                    <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
+                    <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0 }} >
                         <Row>
                             <h1 className="m-b-40 font-bold">TEAM ORION MARINE CONCEPTS</h1>
                             <h5 className="m-b-40" style={{ lineHeight: "1.8" }}>
@@ -111,13 +110,13 @@ export default function OurTeam(index) {
                             <OurTeamManagement/>
                         </Row>
                     </motion.div>
-                    <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
+                    <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0 }} >
                         <Row className="m-t-50">
                             <h2 className="m-b-50 font-bold">MEET OUR DEVS</h2>
                             <OurTeamDevs/>
                         </Row>
                     </motion.div>
-                    <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} >
+                    <motion.div variants={boxVariantsPop} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0 }} >
                         <Row className="m-t-50">
                             <h2 className="m-b-50 font-bold">OUR IMPLEMENTATION, SUPPORT & DEPLOYMENT</h2>
                             <OurSupportTeam/>

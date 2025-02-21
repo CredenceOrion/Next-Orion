@@ -1,6 +1,9 @@
 import HeaderFooterWrapper from "../components/HeaderFooterWrapper";
 import ScrollButton from "../components/ScrollTopButton/ScrollTopButton";  
 import ScrollToTop from "../components/ScrollTopButton/ScrollToTop";  
+import "bootstrap/dist/css/bootstrap.min.css"; 
+import "../styles/CustomCss/CustomStyle.css";
+import "../styles/CustomCss/Margins.css";
 
 
 export const metadata = {
