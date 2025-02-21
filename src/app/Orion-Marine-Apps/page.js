@@ -173,7 +173,10 @@ export default function OrionMarineApps({index}) {
                         </div>
                       )}
                     </Col>
-                    <Col md={6} xs={12} className="p-r-100 p-l-100">
+                    <Col md={6} xs={12}>
+                    {!isMobile ?(<>
+                      <Row>
+                        <Col xs={12} className=" p-r-100 p-l-100">
                       <div className="mockup">
                         <img
                           alt="Mockup Inspect Nau"
@@ -202,6 +205,47 @@ export default function OrionMarineApps({index}) {
                           }}
                         />
                       </div>
+                      </Col>
+                      </Row>
+                      </>
+                    ):(
+                      <>
+                      <Row>
+                      <Col xs={12}>
+                      
+                      
+                      <div className="mockup">
+                      <img
+                        alt="Mockup Inspect Nau"
+                        src="/Images/Mockups/mockup1-front.png"
+                        className="img-fluid front wow fadeInDown animated"
+                        data-wow-duration=".7s"
+                        data-wow-delay="0.8s"
+                        style={{
+                          visibility: "visible",
+                          animationDuration: "0.7s",
+                          animationDelay: "0.8s",
+                          animationName: "fadeInDown",
+                        }}
+                      />
+                      <img
+                        alt="Mockup NAU"
+                        src="/Images/Mockups/mockup1-back.png"
+                        className="img-fluid back wow fadeInDown animated"
+                        data-wow-duration=".7s"
+                        data-wow-delay="0.5s"
+                        style={{
+                          visibility: "visible",
+                          animationDuration: "0.7s",
+                          animationDelay: "0.5s",
+                          animationName: "fadeInDown",
+                        }}
+                      />
+                    </div>
+                    </Col>
+                      </Row>
+                      </>
+                    )}
                     </Col>
                   </Row>
                 </Container>
