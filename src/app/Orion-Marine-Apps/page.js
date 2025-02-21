@@ -20,28 +20,32 @@ export default function OrionMarineApps(index) {
        setIsMobile(checkMobile);
    }, []);
 
- const boxVariantsL = !isMobile
-       ? {
-             hidden: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
-             visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
-         }
-       : { hidden: { opacity: 1, x:0 }, visible: { opacity: 1, x:0 } };
-
-   const boxVariantsR = !isMobile
-       ? {
-             hidden: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
-             visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
-         }
-       : { hidden: { opacity: 1, x:0 }, visible: { opacity: 1, x:0 } };
-
-   const boxVariantsPop = !isMobile
-       ? {
-             hidden: { opacity: 0, scale: 0.2 },
-             visible: { opacity: 1, scale: 1, transition: { duration: 1 } }
-         }
-       : { hidden: { opacity: 1, scale: 1 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } } };
-  
-  
+   if (!isMobile) {
+    boxVariantsL = {
+      initial: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
+      whileInView: { opacity: 1, x: 0, transition: { duration: 0.7 } },
+    };
+    boxVariantsR = {
+      initial: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
+      whileInView: { opacity: 1, x: 0, transition: { duration: 0.7 } },
+    };
+    boxVariantsPop = {
+      initial: { opacity: 0, scale: 0.2 },
+      whileInView: { opacity: 1, scale: 1, transition: { duration: 1 } }
+    }
+  } else {
+    boxVariantsL = {
+      initial: { opacity: 1 }, whileInView: { opacity: 1 },
+    };
+    boxVariantsR = {
+      initial: { opacity: 1 },
+      whileInView: { opacity: 1 },
+    };
+    boxVariantsPop = {
+      initial: { opacity: 1 },
+      whileInView: { opacity: 1 }
+    }
+  }
   return (
     <>
      
@@ -58,8 +62,7 @@ export default function OrionMarineApps(index) {
                 <Container className="p-t-80 p-b-80">
                   <Row className="m-l-0 m-r-0 full-height align-items-center">
                     <Col xs={12} md={6} style={{ position: "relative" }}>
-                      <motion.div variants={boxVariantsL} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0 }}
-                      >
+                      <motion.div variants={boxVariantsL} whileInView="whileInView" initial="initial" viewport={{ once: true }}>
                         <h1
                           className="p-l-10per BiEmpowering"
                           style={{color: "#ffffff", paddingTop: "7%", fontSize: "2rem"}}
