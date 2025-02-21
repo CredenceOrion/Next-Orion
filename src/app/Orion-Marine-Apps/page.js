@@ -13,10 +13,13 @@ import { useState, useEffect } from "react";
 
 
 export default function OrionMarineApps(index) {
+  let boxVariantsL = {};
+  let boxVariantsR = {};
+  let boxVariantsPop = {};
   const [isMobile, setIsMobile] = useState(false);
 
    useEffect(() => {
-       const checkMobile = () => window.innerWidth < 1100;
+       const checkMobile = () => typeof window !=="undefined" && window.innerWidth < 1100;
        setIsMobile(checkMobile);
    }, []);
 
