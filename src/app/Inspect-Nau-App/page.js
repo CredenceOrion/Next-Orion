@@ -9,34 +9,36 @@ import { faFileAlt, faFilePdf } from "@fortawesome/fontawesome-free-regular";
 
 export default function InspectNau(index) {
   const [isMobile, setIsMobile] = useState(false);
+       
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 1100);
+    handleResize(); // Set initial state
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-   useEffect(() => {
-       const checkMobile = () => window.innerWidth < 1100;
-       setIsMobile(checkMobile);
-   }, []);
+  const boxVariantsL = !isMobile
+    ? {
+        hidden: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
+        visible: { opacity: 1, x: 0, transition: { duration: 0.7 } },
+      }
+    : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
 
- const boxVariantsL = !isMobile
-       ? {
-             hidden: { opacity: 0, x: index % 2 === 0 ? 350 : -350 },
-             visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
-         }
-       : { hidden: { opacity: 1, x:0 }, visible: { opacity: 1, x:0 } };
+  const boxVariantsR = !isMobile
+    ? {
+        hidden: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
+        visible: { opacity: 1, x: 0, transition: { duration: 0.7 } },
+      }
+    : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
 
-   const boxVariantsR = !isMobile
-       ? {
-             hidden: { opacity: 0, x: index % 2 === 0 ? -350 : 350 },
-             visible: { opacity: 1, x: 0, transition: { duration: 0.7 } }
-         }
-       : { hidden: { opacity: 1, x:0 }, visible: { opacity: 1, x:0 } };
 
-   const boxVariantsPop = !isMobile
-       ? {
-             hidden: { opacity: 0, scale: 0.2 },
-             visible: { opacity: 1, scale: 1, transition: { duration: 1 } }
-         }
-       : { hidden: { opacity: 1, scale: 1 }, visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } } };
-    
-         
+  const boxVariantsPop = !isMobile
+    ? {
+        hidden: { opacity: 0, scale: 0.2 },
+        visible: { opacity: 1, scale: 1, transition: { duration: 1 } },
+      }
+    : { hidden: { opacity: 1 }, visible: { opacity: 1 } };
+
   
 
   //scroll to Register section
@@ -74,6 +76,7 @@ export default function InspectNau(index) {
                       className="Minu70"
                       style={{ position: "relative" }}
                     >
+                      {!isMobile ? (
                       <motion.div variants={boxVariantsL}  initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0 }}
                       >
                         <h1
@@ -176,6 +179,109 @@ export default function InspectNau(index) {
                           </div>
                         </div>
                       </motion.div>
+                    ) : (
+                      <div>
+                          <h1
+                          className="p-l-10per  BiEmpowering"
+                          style={{
+                            color: "rgb(255 255 255)",
+                            paddingTop: "1%",
+                            fontSize: "2rem",
+                          }}
+                        >
+                          InspectNAU: The Future of Marine Inspections
+                        </h1>
+                        <div
+                          className="p-l-10per  text-left fs-18"
+                          style={{ color: "rgb(255 255 255)" }}
+                        >
+                          Simplify marine inspections with InspectNAU, a
+                          powerful mobile app designed to save time, enhance
+                          accuracy, and ensure compliance. Built by maritime
+                          experts, InspectNAU is your all-in-one solution for
+                          efficient inspections, real-time reporting, and
+                          seamless collaboration.
+                        </div>
+                        <h1
+                          className="p-l-10per  BiEmpowering"
+                          style={{
+                            color: "rgb(255 255 255)",
+                            paddingTop: "7%",
+                            fontSize: "2rem",
+                          }}
+                        >
+                          Streamline Inspections. Ensure Compliance. Maximize
+                          Efficiency.
+                        </h1>
+                        <div
+                          className="p-l-10per  text-left fs-18"
+                          style={{ color: "rgb(255 255 255)" }}
+                        >
+                          From pre-loaded checklists to automated reporting,
+                          InspectNAU empowers maritime professionals to meet
+                          evolving industry demands with ease.
+                        </div>
+                        <div className="apps-buttons p-l-10per m-t-40 text-left">
+                          <a
+                            href="https://apps.apple.com/in/app/inspectnau/id6737123212"
+                            className="float-left"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            <img
+                              src="/Images/AppStore.png"
+                              alt="App Store Download"
+                              style={{ maxWidth: "180px", animation: "none" }}
+                              className="img-fluid"
+                            />
+                          </a>
+                          <a href="https://play.google.com/store/apps/details?id=com.LaunchfortTechnologies.InspectNau&hl=en"
+                          target="_blank"
+                          rel="noreferrer">
+                          <img
+                            src="/Images/playStore.png"
+                            alt="Coming Soon on the Play Store"
+                            style={{ maxWidth: "180px", animation: "none" }}
+                            className="img-fluid m-l-10"
+                          />
+                          </a>
+
+                          <div className="col-xs-12 mt-5">
+                          <Button
+                                variant="light"
+                                className="mb-5 p-l-10 p-r-10 fs-25 p-t-10 p-b-10 "
+                                style={{
+                                  borderRadius: "50px",
+                                  padding: "5px 50px",
+                                  fontSize: "25px",
+                                  fontWeight: "500",}} id="LogIn"
+                              >
+                                <Link
+                                  href="https://inspectnau.orionmarineconcepts.com/loginpage.aspx"
+                                  target="_blank"
+                                  style={{ fontSize: "1.4rem", color: "#000000" }}
+                                >
+                                  Login <FontAwesomeIcon className="m-l-5" icon={faRightToBracket} />
+                                </Link>
+                              </Button>
+
+                            <Button
+                              onClick={handleScroll}
+                              variant="light"
+                              className="mb-5 p-l-10 p-r-10 fs-25 p-t-10 p-b-10 "
+                              style={{
+                                borderRadius: "50px",
+                                padding: "5px 50px",
+                                fontSize: "25px",
+                                fontWeight: "500",
+                              }} id="Register"
+                            >
+                              How to Register
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                     </Col>
                     <Col md={7} xs={12}>
                       <img
@@ -320,6 +426,7 @@ export default function InspectNau(index) {
             </Col>
 
             <Col xs={12} md={5} className="motion-container text-left">
+            {!isMobile ? (
               <motion.div variants={boxVariantsR} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0 }}>
                 <Accordion
                   alwaysOpen
@@ -521,6 +628,209 @@ export default function InspectNau(index) {
                   </Row>
                 </Accordion>
               </motion.div>
+            ) : (
+              <div>
+                <Accordion
+                  alwaysOpen
+                  defaultActiveKey="0"
+                  className=" text-start"
+                >
+                  <Row className="mt-3 CommonAccordion">
+                    <Accordion.Item eventKey="0" className=" mt-2 mb-2">
+                      <Accordion.Header>
+                        Versatile Inspection Capabilities
+                      </Accordion.Header>
+                      <Accordion.Body>
+                        <ul className="list-items list-items-layout2 list-unstyled text-left">
+                          <li>
+                            <b> SIRE 2.0 Pre Vetting Inspection</b>
+                          </li>
+                          <li>
+                            <b> RightShip 3.1 Pre Vetting Inspection</b>
+                          </li>
+                          <li>
+                            <b>
+                              {" "}
+                              ISM, ISPS, QHSSE Inspections and Audits (Company
+                              specific)
+                            </b>
+                          </li>
+                          <li>
+                            <b>
+                              {" "}
+                              Technical and Marine Inspections (Company
+                              specific)
+                            </b>
+                          </li>
+                          <li>
+                            <b>
+                              {" "}
+                              Cargo, Mooring and other Inspections (Company
+                              specific)
+                            </b>
+                          </li>
+                          <li>
+                            <b> Navigation Audits (Company specific)</b>
+                          </li>
+                          <li>
+                            <b> Pre-Purchase Inspections</b>
+                          </li>
+                          <li>
+                            <b> P&I Club Inspections</b>
+                          </li>
+                          <li>
+                            <b> Terminal Inspections for vessels</b>
+                          </li>
+                          <li>
+                            <b>
+                              {" "}
+                              Any other type of inspections and audits can be
+                              uploaded on your cloud account and synchronised
+                              with the InspectNAU APP.
+                            </b>
+                          </li>
+                        </ul>
+                      </Accordion.Body>
+                    </Accordion.Item>
+
+                    <Accordion.Item eventKey="4" className=" mt-2 mb-2">
+                      <Accordion.Header>
+                        Real-Time Documentation
+                      </Accordion.Header>
+                      <Accordion.Body>
+                        <ul>
+                          <li>
+                            Record observations instantly, attaching photos,
+                            voice to text, and files for complete accuracy.
+                          </li>
+                          <li>
+                            Keep all inspection data securely organized and
+                            readily accessible in one platform.
+                          </li>
+                        </ul>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item eventKey="7" className=" mt-2 mb-2">
+                      <Accordion.Header>Automated Reporting</Accordion.Header>
+                      <Accordion.Body>
+                        <ul>
+                          <li>
+                            Generate comprehensive, shareable reports at the
+                            touch of a button, cutting down hours of manual
+                            work.
+                          </li>
+                          <li>
+                            Eliminate errors and speed up the approval process
+                            with standardized, accurate reporting templates.
+                          </li>
+                        </ul>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item eventKey="10" className=" mt-2 mb-2">
+                      <Accordion.Header>Offline Capability</Accordion.Header>
+                      <Accordion.Body>
+                        <ul>
+                          <li>
+                            Conduct inspections anytime, anywhere—even without
+                            internet access.
+                          </li>
+                          <li>
+                            Data automatically syncs when reconnected, ensuring
+                            seamless workflow continuity.
+                          </li>
+                        </ul>
+                      </Accordion.Body>
+                    </Accordion.Item>
+
+                    <Accordion.Item eventKey="1" className=" mt-2 mb-2">
+                      <Accordion.Header>
+                        Cloud-Based Platform with BI Integration
+                      </Accordion.Header>
+                      <Accordion.Body>
+                        <ul>
+                          <li>
+                            Store, access, and manage data securely with cloud
+                            technology.
+                          </li>
+                          <li>
+                            Integrated Business Intelligence (BI) tools provide
+                            actionable insights and performance analytics.
+                          </li>
+                        </ul>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item eventKey="5" className=" mt-2 mb-2">
+                      <Accordion.Header>ERP Compatibility</Accordion.Header>
+                      <Accordion.Body>
+                        <ul>
+                          <li>
+                            Connect seamlessly to your ERP systems, centralizing
+                            data for better management and efficiency.
+                          </li>
+                          <li>
+                            Enhanced Power BI integration enables deep insights
+                            into inspection trends and operational performance.
+                          </li>
+                        </ul>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item eventKey="2" className=" mt-2 mb-2">
+                      <Accordion.Header>
+                        Photographs with Condition Rating
+                      </Accordion.Header>
+                      <Accordion.Body>
+                        <ul>
+                          <li>
+                            Capture photos directly within the app and assign
+                            condition ratings to the observed items instantly.
+                            This feature ensures detailed visual documentation
+                            tied to inspection standards, providing clarity and
+                            actionable insights for every observation.
+                          </li>
+                        </ul>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item eventKey="11" className=" mt-2 mb-2">
+                      <Accordion.Header>
+                        Future-Ready with AI Integration
+                      </Accordion.Header>
+                      <Accordion.Body>
+                        <ul>
+                          <li>
+                            Get ready for the next wave of innovation with
+                            upcoming AI-powered features, offering predictive
+                            analytics and smarter decision-making tools.
+                          </li>
+                        </ul>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                    <Accordion.Item eventKey="9" className=" mt-2 mb-2">
+                      <Accordion.Header>
+                        Integrated Training and SMS Guidelines
+                      </Accordion.Header>
+                      <Accordion.Body>
+                        <ul>
+                          <li>
+                            InspectNAU goes beyond just inspections by offering
+                            built-in guidance to train personnel on industry
+                            best practices. The app includes detailed
+                            instructions aligned with SIRE 2.0, TMSA standards,
+                            and the company’s own Safety Management System (SMS)
+                            guidelines. This ensures every team member is
+                            trained to meet the highest operational and safety
+                            standards. By integrating these guidelines directly
+                            into the app, we enable a seamless and effective
+                            learning experience, helping companies build a
+                            culture of compliance and safety while maintaining
+                            operational excellence.
+                          </li>
+                        </ul>
+                      </Accordion.Body>
+                    </Accordion.Item>
+                  </Row>
+                </Accordion>
+              </div>
+            )}
             </Col>
           </Row>
         </Container>
