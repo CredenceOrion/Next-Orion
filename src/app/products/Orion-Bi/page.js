@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
+
 export default function OrionPowerBi(index) {
   const [isMobile, setIsMobile] = useState(false);
 

@@ -40,12 +40,18 @@ END:VCARD
     const blob = new Blob([vCardData], { type: "text/vcard" });
     const url = window.URL.createObjectURL(blob);
 
-    // Open the vCard in a new tab (iOS-Friendly)
-    window.open(url, "_blank");
-
-    setTimeout(() => {
-        window.URL.revokeObjectURL(url);
-    }, 3000); // Delay to ensure download works
+     // Create a temporary <a> element to trigger the download
+     const a = document.createElement("a");
+     a.href = url;
+     a.download = "Capt_Mohit_Sabharwal.vcf"; // Set the filename
+     document.body.appendChild(a);
+     a.click();  // Simulate click to download
+     document.body.removeChild(a); // Clean up
+ 
+     // Revoke the URL after some time
+     setTimeout(() => {
+         window.URL.revokeObjectURL(url);
+     }, 3000);
 };
 
   

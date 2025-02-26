@@ -7,16 +7,16 @@ import "../styles/CustomCss/Margins.css";
 
 
 export const metadata = {
-  title: "Orion Marine Concepts", 
-  description: "Official website of Orion Marine Concepts",
   icons: {
     icon: "/logoFav.ico", 
-  },
+  }
 };
+
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      
       <body className="App">
         <HeaderFooterWrapper>{children}</HeaderFooterWrapper>
         <ScrollButton />

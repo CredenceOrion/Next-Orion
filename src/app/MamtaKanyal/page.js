@@ -37,16 +37,24 @@ URL:${website}
 END:VCARD
     `.trim();
 
+    // Create a blob and object URL
     const blob = new Blob([vCardData], { type: "text/vcard" });
     const url = window.URL.createObjectURL(blob);
 
-    // Open in a new tab (better for iOS)
-    window.open(url, "_blank");
+    // Create a temporary <a> element to trigger the download
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "Mamta_Kanyal.vcf"; // Set the filename
+    document.body.appendChild(a);
+    a.click();  // Simulate click to download
+    document.body.removeChild(a); // Clean up
 
+    // Revoke the URL after some time
     setTimeout(() => {
         window.URL.revokeObjectURL(url);
-    }, 3000); // Delay for iOS compatibility
+    }, 3000);
 };
+
 
   
   

@@ -81,7 +81,7 @@ const sliderImageUrl = [
     {
         url: "/Images/PowerBi1.jpg",
         head: "Orion Business Intelligence",
-        link: "Orion-Bi"
+        link: "products/Orion-Bi"
     }
 ];
 const CarouselProduct = () => {
