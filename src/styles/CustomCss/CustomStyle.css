@@ -367,8 +367,9 @@ a {
   justify-content: flex-start;
   align-items: center;
 }
+
 .navbar-nav .nav-link.active, .navbar-nav .show > .nav-link {
-  color: rgb(0 0 0);
+  color: #ffffffad;
 }
 .sideTab img {
   width: 50px;
