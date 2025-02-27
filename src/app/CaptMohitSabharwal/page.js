@@ -40,18 +40,20 @@ END:VCARD
     const blob = new Blob([vCardData], { type: "text/vcard" });
     const url = window.URL.createObjectURL(blob);
 
-     // Create a temporary <a> element to trigger the download
-     const a = document.createElement("a");
-     a.href = url;
-     a.download = "Capt_Mohit_Sabharwal.vcf"; // Set the filename
-     document.body.appendChild(a);
-     a.click();  // Simulate click to download
-     document.body.removeChild(a); // Clean up
- 
-     // Revoke the URL after some time
-     setTimeout(() => {
-         window.URL.revokeObjectURL(url);
-     }, 3000);
+    // Open the vCard in a new tab (iOS-Friendly)
+   // window.open(url, "_blank");
+
+   // Create a temporary <a> element to trigger the download
+   const a = document.createElement("a");
+   a.href = url;
+   a.download = "Capt_Mohit_Sabharwal.vcf"; // Set the filename
+   document.body.appendChild(a);
+   a.click();  // Simulate click to download
+   document.body.removeChild(a); // Clean up
+
+    setTimeout(() => {
+        window.URL.revokeObjectURL(url);
+    }, 3000); // Delay to ensure download works
 };
 
   
@@ -164,7 +166,7 @@ END:VCARD
 
               <div className="social-links">
                 <button
-                  className="btn btn-info float-end mt-1 mb-2"
+                  className="btn btn-info pull-right mt-1 mb-2"
                   style={{
                     padding: "0 10px",
                     borderRadius: "50px",
@@ -209,7 +211,7 @@ END:VCARD
                   style={{ borderRadius: "20px" }}
                 >
                   <div
-                    className="col-7 float-start"
+                    className="col-7 pull-left"
                     style={{ lineHeight: "1.2" }}
                   >
                     <h5 className="SaasHead">Orion SAAS Portfolio</h5>
@@ -223,7 +225,7 @@ END:VCARD
                             QHSSE Guardian
                             <FontAwesomeIcon
                               icon={faArrowAltCircleRight}
-                              className="float-end"
+                              className="pull-right"
                             />
                           </Link>
                         </li>
@@ -235,7 +237,7 @@ END:VCARD
                             Planned Maintenance System
                             <FontAwesomeIcon
                               icon={faArrowAltCircleRight}
-                              className="float-end"
+                              className="pull-right"
                             />
                           </Link>
                         </li>
@@ -247,7 +249,7 @@ END:VCARD
                             Purchase and Procurement
                             <FontAwesomeIcon
                               icon={faArrowAltCircleRight}
-                              className="float-end"
+                              className="pull-right"
                             />
                           </Link>
                         </li>
@@ -259,7 +261,7 @@ END:VCARD
                             Crew Management
                             <FontAwesomeIcon
                               icon={faArrowAltCircleRight}
-                              className="float-end"
+                              className="pull-right"
                             />
                           </Link>
                         </li>
@@ -273,7 +275,7 @@ END:VCARD
                             Electronic SMS{" "}
                             <FontAwesomeIcon
                               icon={faArrowAltCircleRight}
-                              className="float-end"
+                              className="pull-right"
                             />
                           </Link>
                         </li>
@@ -285,7 +287,7 @@ END:VCARD
                             Fleet Performance Monitoring{" "}
                             <FontAwesomeIcon
                               icon={faArrowAltCircleRight}
-                              className="float-end"
+                              className="pull-right"
                             />
                           </Link>
                         </li>
@@ -298,7 +300,7 @@ END:VCARD
                             MRV and IMO DCS Services
                             <FontAwesomeIcon
                               icon={faArrowAltCircleRight}
-                              className="float-end"
+                              className="pull-right"
                             />
                           </Link>
                         </li>
@@ -311,7 +313,7 @@ END:VCARD
                           GHG and CII Monitoring{" "}
                           <FontAwesomeIcon
                             icon={faArrowAltCircleRight}
-                            className="float-end"
+                            className="pull-right"
                           />
                           </Link>
                         </li>
@@ -325,7 +327,7 @@ END:VCARD
                             E-Cloud DocVault
                             <FontAwesomeIcon
                               icon={faArrowAltCircleRight}
-                              className="float-end"
+                              className="pull-right"
                             />
                           </Link>
                         </li>
@@ -338,7 +340,7 @@ END:VCARD
                           E-Logs Marpol Annex
                           <FontAwesomeIcon
                             icon={faArrowAltCircleRight}
-                            className="float-end"
+                            className="pull-right"
                           />{" "}
                           </Link>
                         </li>
@@ -350,7 +352,7 @@ END:VCARD
                           E-MARPOL Seal Log
                           <FontAwesomeIcon
                             icon={faArrowAltCircleRight}
-                            className="float-end"
+                            className="pull-right"
                           />{" "}
                           </Link>
                         </li>
@@ -362,7 +364,7 @@ END:VCARD
                             Microsoft BI Enabled
                             <FontAwesomeIcon
                               icon={faArrowAltCircleRight}
-                              className="float-end"
+                              className="pull-right"
                             />
                           </Link>
                         </li>
@@ -379,7 +381,7 @@ END:VCARD
                             InspectNAU - SIRE 2.0, RISQ 3.1...
                             <FontAwesomeIcon
                               icon={faArrowAltCircleRight}
-                              className="float-end"
+                              className="pull-right"
                             />
                           </Link>
                         </li>
@@ -391,14 +393,14 @@ END:VCARD
                             NAU Fleet Performance
                             <FontAwesomeIcon
                               icon={faArrowAltCircleRight}
-                              className="float-end"
+                              className="pull-right"
                             />
                           </Link>
                         </li>
                       </ul>
                     </div>
                   </div>
-                  <div className="col-5 float-end">
+                  <div className="col-5 pull-right">
                     <div className="col-12 p-r-0">
                       <div className="Maritime_Solutions">
                         <img
@@ -411,7 +413,7 @@ END:VCARD
                   </div>
                 </div>
                 <Row
-                  className="m-l-0 m-r-0 float-start"
+                  className="m-l-0 m-r-0 pull-left"
                   style={{ width: "100%" }}
                 >
                   <Col xs={12} className="p-l-0 p-r-0">
@@ -470,7 +472,7 @@ END:VCARD
                     </div>
                   </Col>
                   <Col xs={3} className="p-l-0 p-r-0">
-                    <span className="float-end">
+                    <span className="pull-right">
                       <img
                         src="/Images/Bi/digital-globe.jpg"
                         alt="Orion Chart"
